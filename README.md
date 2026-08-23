@@ -1,66 +1,11 @@
-# Curso: QA Manual Potenciado por IA (QA AI-Augmented)
+# Banco X Sistema Home Banking QA
 
 > **Transforma tu perfil de QA tradicional a QA Augmented dominando LLMs, Context Engineering y Protocolos MCP.**
 
 ![QA AI Status](https://img.shields.io/badge/Status-Active-success)
 ![Focus](https://img.shields.io/badge/Focus-Shift%20Left%20%26%20Exploratory-blue)
-![Tools](https://img.shields.io/badge/Tools-Gemini%20%7C%20Claude%20%7C%20OpenAI-orange)
+![LLM](https://img.shields.io/badge/LLM-Copilot-orange)
 
----
-
-> ## ⚠️ Antes que nada: este README no es el tuyo
->
-> Lo que estás leyendo describe **el repositorio del curso**. En cuanto creaste tu copia
-> desde la plantilla, dejó de ser cierto: tu repositorio ya no es un curso, es **el
-> repositorio de trabajo de tu proyecto**.
->
-> **Reescribilo.** No es un trámite: el README es lo primero que lee una persona que entra
-> al proyecto — y también lo primero que lee la IA cuando le pedís que se ubique. Si dice
-> que esto es un curso, vas a arrastrar ese malentendido a todo lo que generes.
->
-> Qué tiene que salir: el título, las referencias al curso, a las clases y a los alumnos,
-> la sección de contribución al repositorio original, y el pie de página. Qué tiene que
-> entrar: qué es tu proyecto, para qué sirve cada carpeta y cómo se trabaja acá.
->
-> **Pedíselo a tu asistente con algo así:**
->
-> ```text
-> Reescribí el README.md de este repositorio.
->
-> Contexto: este repositorio arrancó como la plantilla de un curso y el README todavía
-> describe el curso, no el proyecto. Hoy es el repositorio de trabajo de QA del proyecto
-> [NOMBRE DE TU PROYECTO], que [UNA LINEA SOBRE QUE HACE].
->
-> Antes de escribir nada, leé AGENTS.md, .context/ai-project-map.md y la estructura de
-> carpetas, y basate en lo que encuentres ahí, no en suposiciones.
->
-> Quiero que:
-> 1. Saques toda referencia al curso, a las clases, a los alumnos y a la contribución al
->    repositorio original, incluido el pie de página.
-> 2. Expliques qué es este repositorio hoy y para qué sirve cada carpeta.
-> 3. Mantengas los enlaces a las guías de .guides/, que siguen siendo válidos.
-> 4. Verifiques lo que afirmes: si decís que una carpeta está vacía, abrila primero.
->
-> Mostrame el resultado antes de guardarlo.
-> ```
->
-> **Y revisá lo que te devuelva antes de aceptarlo.** Es tu primer ejercicio del curso sin
-> que nadie te lo pida: leer un documento generado por IA y buscarle los errores. Empezá
-> por los que ya tiene este README —dice que `.context/` *"viene vacía"* y no es cierto—.
->
-> Cuando termines, borrá este aviso. Es lo único de este archivo que sí es del curso.
-
----
-
-## 🎯 ¿Qué es este curso?
-
-Este repositorio contiene todo el material práctico, prompts y guías para el curso de **"Modernización del Testing con IA"**.
-
-El objetivo no es que la IA haga tu trabajo, sino que te conviertas en un **Arquitecto de Calidad** que orquesta inteligencias artificiales para:
-1.  Analizar requisitos antes de que existan (Shift-Left).
-2.  Generar estrategias de prueba robustas en minutos.
-3.  Ejecutar pruebas exploratorias asistidas por agentes autónomos.
-4.  Documentar casos de prueba y bugs con calidad profesional.
 
 ---
 
@@ -73,7 +18,6 @@ Este proyecto está diseñado para ser tu **"Laboratorio de QA"**.
 | **`.prompts/`** | 🧠 **El Cerebro:** Librería de prompts de ingeniería listos para usar en cada fase (F1 a F7). |
 | **`.context/`** | 🗂️ **La Memoria:** Aquí se guardan los outputs de la IA (PRDs, Planes de Prueba, Bugs). Viene vacía para que tú la llenes. |
 | **`.guides/`** | 📚 **El Manual:** Guías técnicas para instalar CLIs, trabajar con Git y conectar LLMs (ver abajo). |
-| **`.documents/`** | 📖 **La Teoría:** Explicación conceptual de cada fase del ciclo de vida del QA Augmented. |
 
 ---
 
