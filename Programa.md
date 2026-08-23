@@ -12,6 +12,8 @@ Este curso está específicamente dirigido a **QA Manuales y Analistas QA** que 
 
 El programa transforma a estos profesionales en perfiles de **QA Augmentation**, capaces de gestionar el ciclo de vida del software utilizando herramientas de nivel desarrollador (**CLI, Git, IDEs**) y orquestando **LLMs** para eliminar la deuda de documentación y acelerar la producción de casos de prueba.
 
+perfecto
+
 ---
 
 ### **2\. El Problema y la Solución**
