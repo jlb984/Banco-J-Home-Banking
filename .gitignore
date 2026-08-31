@@ -32,6 +32,7 @@
 *.key
 claude_config.json
 mcp-config.json
+mcp_config.json
 .mcp.json
 *.postman_environment.json
 
