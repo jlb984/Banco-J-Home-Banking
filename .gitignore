@@ -40,6 +40,10 @@ mcp_config.json
 .claude/settings.local.json
 CLAUDE.local.md
 .vscode/
+.idea/
+.codex/*
+!.codex/example.config.toml
+!.codex/mcp-servers.template.toml
 
 # ── macOS ────────────────────────────────────────────────────
 .DS_Store
