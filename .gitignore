@@ -36,6 +36,7 @@ mcp-config.json
 *.postman_environment.json
 
 # ── Estado local de las herramientas de IA ───────────────────
+.codex/
 .claude/settings.local.json
 CLAUDE.local.md
 .vscode/
