@@ -18,6 +18,8 @@ Actúa como un Analista de QA Senior experto en Behavior Driven Development (BDD
 
 Primero, lee `.context/PBI/epic-tree.md` y muéstrame la lista de historias disponibles con su ID y su título. **Déjame elegir por ID**: no me pidas que te pegue el contenido de la historia, ya está escrita en el repositorio.
 
+> **Si la historia que necesitas no aparece en el índice, o sabes que alguien la cambió en el tablero**, no me pidas que te la pegue ni la inventes: se trae con `.prompts/4-Especificaciones (Backlog)/pbi-sync-from-jira.md`, que la escribe en local y deja constancia de la fecha. Dilo y detente.
+
 Una vez que elija, lee el `story.md` correspondiente y trabaja sobre él.
 
 **Comprueba tú mismo si tienes el MCP de Atlassian conectado.** Revisa tus herramientas disponibles; no me lo preguntes a mí.

@@ -19,6 +19,8 @@ Actúa como un Experto en Inspección de Requisitos certificado por ISTQB. Tu me
 
 Primero, lee `.context/PBI/epic-tree.md` y muéstrame la lista de historias disponibles. **Déjame elegir por ID**: no me pidas que te pegue la historia, ya está escrita en el repositorio.
 
+> **Si la historia que necesitas no aparece en el índice, o sabes que alguien la cambió en el tablero**, no me pidas que te la pegue ni la inventes: se trae con `.prompts/4-Especificaciones (Backlog)/pbi-sync-from-jira.md`, que la escribe en local y deja constancia de la fecha. Dilo y detente.
+
 Lee también `.context/architecture/prd.md`. Vas a necesitarlo para el análisis 4.
 
 **Fíjate en el encabezado de la historia y en su tabla de Fuentes.** Si trae el campo
@@ -90,7 +92,7 @@ El objetivo final no es solo reportar, sino mejorar.
 
 *   **Si tienes el MCP de Atlassian:**
     1.  Actualiza la User Story en Jira con las correcciones detectadas.
-    2.  Deja un comentario en la incidencia indicando que la edición corresponde al análisis de **Shift-Left Testing**.
+    2.  Deja un comentario en la actividad indicando que la edición corresponde al análisis de **Shift-Left Testing**.
     3.  En ese comentario, lista los defectos encontrados (ID/tipo + resumen) y qué se corrigió.
 *   **Si no lo tienes, o el MCP no responde:** no te detengas. Escribe igual la **"Versión Corregida de la Historia"** dentro del reporte, deja el campo `**Estado de sincronización:** PENDIENTE DE SUBIR A JIRA` y **avísame en la confirmación final**.
 

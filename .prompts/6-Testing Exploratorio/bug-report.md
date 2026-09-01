@@ -51,7 +51,9 @@ Si el reporte menciona archivos específicos, lístalos explícitamente en la se
 
 ### **Sincronización con Jira**
 
-*   **Si tienes el MCP de Atlassian:** pregúntame si quiero crearlo en Jira como incidencia de tipo `Bug`. Si lo creas, devuélveme la `ISSUE_KEY` y el resumen de campos cargados, y usa esa key en el archivo local.
+*   **Si tienes el MCP de Atlassian:** pregúntame si quiero crearlo en Jira.
+    1.  **Antes de crear nada, comprueba qué tipos de actividad existen en ese espacio.** El tipo de un defecto se llama **`Error`** en la interfaz en español y `Bug` en la inglesa — son el mismo. **Si no existe ninguno de los dos, avísame y no lo sustituyas en silencio por `Tarea`.**
+    2.  Créalo con el tipo que exista, devuélveme la `ISSUE_KEY` y el resumen de campos cargados, y usa esa key en el archivo local.
 *   **Si no lo tienes, no hay proyecto en Jira, o el MCP no responde:** no te detengas. Escribe igual el archivo local con un ID temporal (`BUG-01`), deja el campo `**Estado de sincronización:** PENDIENTE DE SUBIR A JIRA` y **avísame en la confirmación final**.
 
 ---
