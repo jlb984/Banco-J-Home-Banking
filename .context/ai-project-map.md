@@ -10,11 +10,14 @@ Este repositorio es la base de un curso diseñado para transformar a **QA Manual
 ├── .prompts/               # Librería de "Cerebros" (Fases F1-F7)
 ├── .context/               # Contexto del proyecto: todo lo que los prompts leen
 │   ├── Confluence-corporativo/  # El Confluence del proyecto, simulado (ver abajo)
+│   │   └── documentacion para QA/   # Lo más reciente: el pedido de trabajo y los accesos
 │   ├── idea/               # F1 - Constitución
 │   ├── architecture/       # F2 - Arquitectura
 │   ├── infrastructure/     # F3 - Infraestructura
 │   ├── PBI/                # F4 - Especificaciones
 │   └── testing/            # F5-F7 - Testing
+├── .agents/skills/         # Skills: procedimientos que el asistente carga solo
+├── .claude/skills/         # Skills propias de Claude Code y enlaces a .agents/skills/
 ├── .guides/                # Manuales técnicos (Git, LLMs, Setup)
 ├── .documents/             # Base de conocimiento teórica (READMEs humanos)
 ├── .gitignore              # Qué queda fuera del repositorio
@@ -40,11 +43,28 @@ De dónde viene cada archivo es secundario, y hay tres caminos, los tres legíti
 
 ### `Confluence-corporativo/`
 
-Son seis archivos que **simulan las páginas que el equipo habría subido al Confluence
-de la empresa**: documentación de negocio y técnica del proyecto Cita.ai —minuta de
-kickoff, notas de entrevistas, especificación funcional, notas técnicas del
-desarrollador, un hilo de mails de cambio de alcance y un resumen de tickets de
-soporte—. Es el insumo del camino **Brownfield** de las Fases 1 a 3.
+**Simulan las páginas que el equipo habría subido al Confluence de la empresa**:
+la documentación de negocio y técnica del proyecto Cita.ai. Es el insumo del camino
+**Brownfield** de las Fases 1 a 3, y viene en dos capas.
+
+**En la raíz, seis archivos: el registro histórico.** Minuta de kickoff, notas de
+entrevistas, especificación funcional, notas técnicas del desarrollador, un hilo de
+mails de cambio de alcance y un resumen de tickets de soporte. Cubren desde el
+arranque del proyecto hasta mayo de 2026.
+
+**En `documentacion para QA/`, cuatro archivos: lo más reciente.** La transcripción
+de la reunión donde se decide sumar QA, el resumen que generó la herramienta sobre
+esa misma reunión, el hilo de mail con el pedido de trabajo, y la nota del
+desarrollador con la dirección de la aplicación y los accesos.
+
+> **La segunda capa manda sobre la primera.** Cuando un archivo de la raíz y uno de
+> `documentacion para QA/` dicen cosas distintas, gana el más reciente: el viejo no
+> está equivocado, está vencido. **La dirección donde corre la aplicación sale de
+> ahí**, no de las notas técnicas.
+
+> **Y entre lo último escrito y hoy hay tres meses sin un solo documento.** Lo que la
+> aplicación haga y ningún archivo mencione cae en esa ventana. No es un hueco del
+> material: es lo que hay que salir a averiguar.
 
 > **Por qué está simulado.** El curso trabaja sobre una instancia de **Jira Free**,
 > que no incluye Confluence. Sin un Confluence real al que conectarse, la
@@ -64,8 +84,8 @@ El curso sigue un flujo lineal y lógico donde cada paso alimenta al siguiente:
 1.  **F1 - Constitución:** Define el negocio (`business-model.md`) y el mercado (`market-context.md`).
 2.  **F2 - Arquitectura:** Genera el `prd-generator.md` y el `architecture-design.md` (incluye diseño de APIs y Diagramas Mermaid).
 3.  **F3 - Infraestructura:** Mapea el entorno técnico. Matriz de componentes (Frontend, API, DB) y estrategia de datos.
-4.  **F4 - Especificaciones:** Gestión de Backlog en Jira (Jira-First) y refinamiento BDD/Gherkin.
-5.  **F5 - Shift-Left Testing:** Inspección estática de requisitos y corrección proactiva en la fuente. Análisis de Riesgos.
+4.  **F4 - Especificaciones:** Gestión de Backlog en Jira (Jira-First) y refinamiento BDD/Gherkin. En Brownfield suma la reconstrucción de lo ya construido: la skill `documentar-historia` explora la aplicación y escribe la historia que nunca existió, con su evidencia.
+5.  **F5 - Shift-Left Testing:** Inspección estática de requisitos y corrección proactiva en la fuente. Análisis de Riesgos. Cuando el software ya existe, la historia se contrasta también contra el comportamiento observado.
 6.  **F6 - Testing Exploratorio:** Ejecución de la **"Trifuerza"** (UI, API, DB) asistida por MCPs (Playwright, Postman, SQL).
 7.  **F7 - Documentación CPs:** Formalización de casos de prueba, cálculo de ROI de automatización y soporte para Xray.
 
@@ -85,13 +105,14 @@ Todos los prompts en `.prompts/` siguen estos principios de optimización:
 *   **Git Sync:** El repositorio local está configurado con un remoto `origin` que realiza un **Multi-Push** a dos destinos:
     1.  `https://github.com/Ecosistemas-QA/curso-QA-AI-Augmented.git`
     2.  `https://github.com/jlb984/curso-QA-AI-Augmented.git`
-*   **Autenticación:** Uso de **Personal Access Tokens (PAT)** inyectados en las URLs de los remotos para evitar conflictos de identidad.
+*   **Autenticación:** Las tres URLs van **limpias, sin credenciales**. El token vive en el gestor de credenciales del sistema, configurado por repositorio en `.git/config`. Nunca se escribe en una URL de remoto.
 
 ## 6. Estado Actual del Proyecto (Agosto 2026)
 
 *   **Prompts:** Las siete fases están escritas, refinadas y commiteadas.
 *   **Material del proyecto de práctica:** Cargada la documentación heredada de **Cita.ai**
-    en `.context/Confluence-corporativo/` (seis archivos). El resto de `.context/` arranca
+    en `.context/Confluence-corporativo/` (seis archivos históricos más los cuatro de
+    `documentacion para QA/`, que son los recientes). El resto de `.context/` arranca
     vacío a propósito: se va poblando a medida que avanzan las fases.
 *   **Asistentes documentados:** Claude Code, Antigravity, Codex/OpenAI, Copilot y Gemini
     en `.guides/LLMs/`.

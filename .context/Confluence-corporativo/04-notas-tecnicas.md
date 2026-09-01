@@ -272,4 +272,4 @@ lo reportaron y todavia no lo arregle, es de UI.
 
 ---
 
-*ultima edicion: 30/01/2026*
+*ultima edicion: 30/10/2025*

@@ -1,6 +1,6 @@
 # Reunión de arranque — proyecto Cita.ai
 
-**Fecha:** 14/03/2025
+**Fecha:** 14/11/2024
 **Duración:** 1h 40 (nos pasamos de nuevo)
 **Dónde:** sala chica + meet
 

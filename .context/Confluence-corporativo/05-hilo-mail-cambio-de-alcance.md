@@ -7,7 +7,7 @@
 
 **De:** Mariana
 **Para:** Diego, Fernando
-**Fecha:** 03/06/2026 08:41
+**Fecha:** 03/03/2026 08:41
 **Asunto:** RV: RV: Re: Re: Antes del lanzamiento
 
 Chicos, les reenvío todo el hilo porque me lo pidió Sol y me di cuenta de que **nada de esto
@@ -29,7 +29,7 @@ M.
 
 **De:** Diego
 **Para:** Mariana, Fernando
-**Fecha:** 28/05/2026 19:22
+**Fecha:** 28/02/2026 19:22
 **Asunto:** Re: Re: Antes del lanzamiento
 
 Va por partes.
@@ -66,7 +66,7 @@ D.
 
 **De:** Fernando
 **Para:** Diego, Mariana
-**Fecha:** 27/05/2026 11:05
+**Fecha:** 27/02/2026 11:05
 **Asunto:** Re: Antes del lanzamiento
 
 Sobre lo del recordatorio: entiendo que sea complicado pero **es literalmente la mitad de lo
@@ -100,7 +100,7 @@ F.
 
 **De:** Mariana
 **Para:** Diego, Fernando
-**Fecha:** 22/05/2026 16:47
+**Fecha:** 22/02/2026 16:47
 **Asunto:** Re: Antes del lanzamiento
 
 Tres cosas que necesito cerrar antes de que salga:
@@ -125,7 +125,7 @@ M.
 
 **De:** Fernando
 **Para:** Mariana, Diego
-**Fecha:** 12/05/2026 09:30
+**Fecha:** 12/02/2026 09:30
 **Asunto:** Antes del lanzamiento
 
 Gente, arranco el hilo para no perder las cosas en el chat.

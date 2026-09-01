@@ -1,73 +1,124 @@
-# Product Requirement Document (PRD): Cita.ai
+# Product Requirement Document (PRD): Cita AI
 
 ## 1. Introducción y Objetivos
-*   **Visión:** Cita.ai busca eliminar el tiempo administrativo perdido por los profesionales independientes al coordinar citas mediante mensajería. Ofrece una plataforma de auto-reserva con "fricción cero" para el cliente final (sin registro) y "simplicidad radical" para el profesional (puesta en marcha en <5 minutos). Actualmente opera bajo un modelo Freemium limitado a 10 clientes.
-*   **Alcance del Release:** 
-    *   *Incluido:* Gestión de disponibilidad, auto-reserva, cancelación mutua, notificaciones por correo (reservas/cancelaciones), modelo Freemium (límite).
-    *   *Excluido:* Integración de pagos, múltiples profesionales por cuenta, sincronización con Google Calendar, servicios con diferentes duraciones/precios, y **temporalmente excluidos los recordatorios del día anterior** (por restricciones técnicas actuales).
+
+- **Visión:** permitir que profesionales independientes publiquen su disponibilidad y que sus clientes reserven o cancelen turnos sin coordinación manual por chat.
+- **Tipo de proyecto:** Brownfield. El producto está en uso; este PRD reconstruye el alcance esperado y separa lo documentado, lo observado y lo pendiente.
+- **Objetivos de negocio documentados:** ahorrar al profesional al menos 30 minutos semanales, lograr más de 60 % de auto-reservas y superar 40 % de retención a cuatro semanas. No hay resultados reales consolidados para confirmar estas metas.
+- **Alcance funcional reconstruido:** cuenta del profesional, una agenda por cuenta, página pública, reserva sin registro del cliente, cancelación, correos transaccionales, clientes y límite gratuito de 10 clientes únicos.
+- **Fuera de alcance vigente:** pagos, sincronización con calendarios externos, múltiples profesionales, múltiples servicios o precios, formularios personalizados, reportes y aplicaciones nativas.
 
 ## 2. User Personas
-*   **Profesional (Admin):** Individuo o microempresa de 1 a 3 personas cuyo modelo de negocio depende de cobrar por su tiempo (ej. psicólogos, entrenadores). Necesita una solución que funcione sola y no exija configuraciones complejas. Tolerancia nula a la fricción administrativa.
-*   **Cliente final:** Persona que busca consumir un servicio del profesional. Espera una experiencia 100% fluida, online y rápida. No desea crear una cuenta ni recordar otra contraseña simplemente para solicitar una cita.
+
+- **Profesional independiente:** vende su tiempo, trabaja solo y administra una agenda. Laura representa el dolor de coordinación; Carlos, el impacto de cancelaciones tardías y no-shows.
+- **Cliente final digital:** quiere consultar disponibilidad, reservar y cancelar sin esperar respuestas ni crear una cuenta. Sofía es el perfil de referencia.
+- **Casos no resueltos:** quien reserva para otra persona y organizaciones con varias agendas no encajan en el modelo actual.
 
 ## 3. Funcionalidades Principales (Core Features)
 
-### Feature 1: Gestión de Agenda y Disponibilidad
-*   **Descripción:** El profesional configura un horario recurrente semanal (ej. Lun-Vie, 9:00 a 18:00) y la duración estándar de sus turnos (ej. 45 min). Puede añadir bloqueos puntuales (vacaciones, turnos personales).
-*   **Valor para el usuario:** Digitaliza la agenda y automatiza la oferta de horarios reales al público, evitando solapamientos involuntarios.
-*   **Criterios de éxito:** El profesional logra configurar su agenda y obtener su URL pública compartible en menos de 5 minutos desde su registro.
+### Feature 1: Cuenta y activación del profesional
 
-### Feature 2: Portal de Auto-reserva Público
-*   **Descripción:** Interfaz donde el cliente visualiza la disponibilidad generada dinámicamente, selecciona un bloque y reserva introduciendo únicamente nombre y correo electrónico (validando que no se exceda el límite del plan gratuito del profesional).
-*   **Valor para el usuario:** El cliente final tiene autonomía total (resolviendo la reserva en <1 minuto) y se elimina el "ping-pong" de mensajes para ambas partes.
-*   **Criterios de éxito:** Más del 60% de los nuevos turnos son creados autónomamente por el cliente y no introducidos a mano por el profesional.
+- **Descripción:** registro con nombre, email y contraseña; inicio de sesión, recuperación y generación de slug público único.
+- **Valor para el usuario:** comenzar a recibir reservas con configuración mínima.
+- **Criterios de éxito documentados:** registro válido crea cuenta y sesión; recuperación no revela si el email existe y usa token de una hora; el profesional obtiene una URL pública única.
+- **Estado observado:** el usuario de prueba inicia sesión como profesional y accede a `/dashboard`. El panel muestra “Citas Hoy”, “Próxima Cita”, “Clientes Totales”, “Ingresos Mes” y “Próximas Citas”; los dos indicadores comerciales aparecen como “En desarrollo”. No se encontró la URL pública en dashboard, disponibilidad, clientes ni navegación.
 
-### Feature 3: Gestión de Cancelaciones sin Registro
-*   **Descripción:** El cliente puede cancelar una cita haciendo clic en un enlace único recibido por correo, sin necesidad de iniciar sesión. El profesional puede cancelar desde su panel.
-*   **Valor para el usuario:** Evita que el cliente no se presente simplemente por vergüenza o pereza de enviar un mensaje de cancelación. Libera el horario para que el profesional pueda revenderlo.
-*   **Criterios de éxito:** Se notifica exitosamente a la contraparte inmediatamente después de que ocurre una cancelación.
+### Feature 2: Agenda y disponibilidad
 
-### Feature 4: Notificaciones Transaccionales
-*   **Descripción:** Envío de correos automáticos ante nuevos registros, reservas completadas, límites del plan Freemium (cliente #11) y cancelaciones.
-*   **Valor para el usuario:** Mantiene informadas a ambas partes en tiempo real.
-*   **Criterios de éxito:** Entregabilidad de los correos mediante Resend a las bandejas principales (evitando Spam). 
+- **Descripción:** configurar disponibilidad semanal, una duración estándar y bloqueos puntuales; consultar y cancelar turnos.
+- **Valor para el usuario:** ofrecer únicamente horarios utilizables y reducir errores de agenda.
+- **Criterios de éxito documentados:** fin posterior a inicio, bloques sin solapamiento, guardado que reemplaza la configuración completa y exclusión de turnos confirmados/bloqueos al calcular slots.
+- **Regla no definida:** qué ocurre con reservas existentes cuando se bloquea su período.
+- **Estado observado:** `/dashboard/availability` permite elegir duración entre 15, 30, 45, 60, 90 y 120 minutos; crear bloqueos con fecha/hora inicial, fecha/hora final y motivo opcional; y activar días de domingo a sábado. La cuenta tenía 60 minutos, ningún bloqueo y todos los días desactivados. No se guardaron cambios.
+
+### Feature 3: Página pública y auto-reserva
+
+- **Descripción:** consultar disponibilidad por URL del profesional, seleccionar horario e informar nombre y email sin cuenta.
+- **Valor para el usuario:** reservar en segundos sin intercambio de mensajes.
+- **Criterios de éxito documentados:** no ofrecer pasado ni slots ocupados; revalidar disponibilidad al confirmar; conservar datos si otro cliente toma el horario; crear el turno en estado `confirmed` sin aprobación.
+- **Riesgo conocido:** la doble verificación actual reduce, pero no elimina, la carrera entre reservas concurrentes.
+
+### Feature 4: Cancelaciones y comunicaciones
+
+- **Descripción:** cancelar desde el panel o mediante enlace único del correo; enviar bienvenida, confirmación, aviso de nueva reserva y aviso de cancelación.
+- **Valor para el usuario:** mantener informadas a las partes y liberar horarios sin conversación manual.
+- **Criterios de éxito documentados:** solo cancelar turnos futuros, pasar a `cancelled`, liberar el horario y notificar a quien no canceló.
+- **Brecha:** el recordatorio del día anterior fue requerido y luego excluido del lanzamiento; no se considera construido.
+- **Sin verificar:** no se recorrieron reserva, correos ni cancelación porque la cuenta no expone su URL pública y probarlos habría creado datos/correos en producción.
+
+### Feature 5: Clientes y límite freemium
+
+- **Descripción:** listar/cargar clientes y limitar el plan gratuito a 10 clientes únicos por profesional, identificados por email.
+- **Valor para el negocio:** validar adopción y registrar intención de conversión.
+- **Criterios de éxito documentados:** clientes existentes siguen reservando; el cliente nuevo número 11 y la carga manual quedan bloqueados; el profesional recibe aviso y acceso a información del Plan Pro.
+- **Brecha:** el Plan Pro, precio, cobro y beneficios no existen como oferta definida.
+- **Estado observado:** `/dashboard/clients` mostró 0 clientes y el botón “Nuevo Cliente”. Al pulsarlo no apareció formulario, diálogo ni cambio visible; no se realizó ningún alta.
 
 ## 4. User Journeys (Flujos Clave)
-*   **Flujo 1 (Onboarding Profesional):** El profesional se registra -> El sistema le genera un slug y URL pública (ej. cita.ai/slug) -> Es redirigido al panel -> Configura sus franjas horarias y duración de turno -> Copia su URL y la comparte.
-*   **Flujo 2 (Reserva del Cliente):** El cliente ingresa a la URL pública -> Observa las ranuras (slots) disponibles de la semana calculadas en base a las reglas de disponibilidad -> Selecciona un horario -> Introduce nombre y correo -> Se verifica concurrencia -> Reserva confirmada -> Recibe email con link de cancelación.
-*   **Flujo 3 (Cancelación del Cliente):** El cliente revisa su correo de confirmación -> Pulsa el enlace "Cancelar" -> El sistema da de baja el turno sin solicitar contraseña -> El horario vuelve a liberarse en la agenda pública -> El profesional recibe aviso por email.
+
+- **Activación documentada:** registro → sesión automática → configuración inicial → generación de URL → compartirla. La consulta/copia de esa URL en el panel es un gap.
+- **Reserva documentada:** abrir URL → ver semana → elegir slot → informar nombre/email → confirmar → ver confirmación y recibir correo.
+- **Conflicto de reserva:** confirmar slot → revalidar → si ya fue tomado, rechazar con mensaje, refrescar disponibilidad y conservar datos.
+- **Cancelación:** abrir enlace o turno del panel → cancelar futuro → liberar slot → avisar a la otra parte.
+- **Límite:** identificar cliente nuevo número 11 → rechazar reserva/carga → avisar al profesional → ofrecer información del Plan Pro.
+- **Navegación observada:** el menú autenticado contiene Dashboard, Disponibilidad y Clientes. No contiene una opción visible para perfil público, configuración de cuenta o Plan Pro.
+
+Todos los journeys autenticados y de reserva permanecen **sin verificar contra la aplicación** en este reprocesamiento, porque el único entorno confirmado es producción y no se generaron datos.
 
 ## 5. Requisitos No Funcionales (NFRs)
-*   **Seguridad:** 
-    *   Autenticación gestionada con Supabase Auth (token expira en 15 min, refresh token 7 días).
-    *   Políticas RLS (Row Level Security) estrictas, salvo en creación de citas (insert público) por no requerir sesión del cliente final.
-    *   *Riesgo/Hipótesis:* La cancelación vía URL única es pública (bypass a RLS); si un atacante deduce el ID de la cita, podría cancelarla sin permisos.
-*   **Rendimiento (Estado actual, no compromisos):** 
-    *   Carga de página pública en < 2 segundos. Tiempos de API < 500ms (P95). Consultas DB < 100ms. *Nota: Estos valores son mediciones del equipo de desarrollo, no SLIs acordados por negocio.*
-*   **Compatibilidad:** Aplicación Web (Next.js) con diseño responsivo prioritario para uso móvil, dado que gran parte de los usuarios y clientes reservan desde celulares (según pruebas mencionadas).
+
+- **Seguridad existente documentada:** Supabase Auth, cookies `httpOnly`, middleware para dashboard, RLS y respuesta no enumerativa en recuperación.
+- **Seguridad observada:** “Salir” cambió la navegación a “Iniciar Sesión/Registrarse Gratis”, pero no redirigió y las rutas `/dashboard`, `/dashboard/availability` y `/dashboard/clients` continuaron renderizando sus pantallas sin sesión. No se intentó guardar ni consultar datos sensibles después del logout.
+- **Rendimiento medido, no acordado:** página pública <2 s, API p95 300–500 ms y usabilidad <3 s según notas técnicas. No son objetivos comprometidos.
+- **Disponibilidad y capacidad:** no hay SLO, monitoreo ni prueba formal de concurrencia. La referencia de 100 usuarios simultáneos es una estimación técnica, no un requisito.
+- **Compatibilidad:** web responsive; navegadores, versiones, resoluciones y requisitos de accesibilidad no están definidos.
+- **Privacidad:** no usar PII ni credenciales reales en pruebas o documentación; hoy no existe un entorno de prueba confirmado.
 
 ## 6. Riesgos y Mitigaciones
-*   **Falta de recordatorios automáticos:** (El riesgo principal documentado). La mitad del valor para perfiles propensos a inasistencias es el recordatorio 24hs antes. Su ausencia actual debido a falta de *cron jobs* es un riesgo grave para la retención. **Mitigación temporal:** Monitorear el ausentismo (no-shows) de cerca, o evaluar un upgrade rápido en el plan de Vercel/terceros.
-*   **Condición de carrera (Race Condition) en reservas:** La validación de superposición tiene una pequeña ventana de vulnerabilidad al no realizarse mediante una transacción atómica pura (solo un doble chequeo). **Mitigación:** Monitorizar incidentes de dobles reservas hasta migrar a una función atómica (Postgres function).
-*   **Spam en correos:** El uso del dominio de prueba de Resend está enviando correos al spam. **Mitigación:** Verificar un dominio propio urgente.
-*   **Zonas horarias:** Aunque se aplicó un parche reciente por cruces horarios con clientes en otros países, la arquitectura guarda fechas en local sin conversión estricta, lo que podría fallar si el profesional viaja o tiene clientes remotos de manera consistente.
+
+- **No-shows sin recordatorio:** priorizar decisión e implementación programada; medir entrega y reducción de ausencias.
+- **Reserva concurrente:** mover validación e inserción a una transacción atómica y cubrirla con pruebas de carrera.
+- **Husos horarios:** definir zona del profesional y representación de timestamps; probar Argentina, México y Chile.
+- **Acceso no revocado:** verificar el reporte de panel accesible después de logout antes de afirmar que está resuelto.
+- **Pruebas en producción:** limitarse a lectura hasta disponer de ambiente aislado, seed y reset.
+- **Conversión indefinida:** definir Plan Pro antes de usar el límite como mecanismo comercial.
 
 ## Fuentes
+
 | Dato / afirmación | De dónde sale |
 | :--- | :--- |
-| Ausencia de registro para cliente final | `01-minuta-kickoff.md` · Sección "Los dos usuarios del sistema" / `03-especificacion-funcional-v0.3.md` · Sección "2.2 Cliente final" |
-| Setup de cuenta en <5 minutos | `01-minuta-kickoff.md` · Sección "Qué queremos que pase" / `02-notas-entrevistas.md` · Sección "Lo que saco de las siete" |
-| 10 clientes límite del Freemium | `01-minuta-kickoff.md` · Sección "El modelo freemium" / `03-especificacion-funcional-v0.3.md` · Sección "8. Plan gratuito" |
-| Stack técnico, mediciones NFR y bypass de RLS en cancelación | `04-notas-tecnicas.md` |
-| Recordatorios pospuestos por falta de cron y paso a Resend | `05-hilo-mail-cambio-de-alcance.md` |
-| Bug de zonas horarias y URL no visible | `06-tickets-soporte-resumen.md` |
+| Visión, segmentos, alcance, métricas y modelo freemium | `.context/idea/business-model.md` · secciones 1–9 y Problem Statement |
+| Reglas funcionales esperadas | `.context/Confluence-corporativo/03-especificacion-funcional-v0.3.md` · secciones 3–10 |
+| Implementación técnica, mediciones y brechas | `.context/Confluence-corporativo/04-notas-tecnicas.md` · Auth, slots, reserva, mails y rendimiento |
+| Cambios posteriores al borrador funcional | `.context/Confluence-corporativo/05-hilo-mail-cambio-de-alcance.md` · resumen del 03/03/2026 |
+| Incidentes y necesidades reales | `.context/Confluence-corporativo/06-tickets-soporte-resumen.md` · categorías de soporte |
+| Login y formulario de registro visibles | **Observado** — producción, 30/08/2026. Evidencia: snapshot de Playwright de `/login`; no se enviaron formularios |
+| Rol profesional, dashboard, navegación, disponibilidad y clientes | **Observado** — producción, 30/08/2026 mediante Playwright; no se modificaron datos |
+| Pantallas de dashboard accesibles después de logout | **Observado** — producción, 30/08/2026 mediante Playwright; no se probaron escrituras sin sesión |
+| Transacción atómica y matriz de compatibilidad | **Hipótesis/recomendación** — no son requisitos acordados |
 
 ## Contradicciones detectadas
-*   **Transaccionalidad en Reservas:** La especificación funcional (`03-especificacion-funcional-v0.3.md` RN-02) exige que la revisión de disponibilidad se haga para evitar que dos clientes reserven al mismo tiempo. Sin embargo, las notas técnicas (`04-notas-tecnicas.md`) indican que esto se resolvió con un doble chequeo en código en lugar de una transacción SQL, lo que deja la ventana de error semiabierta (validado por un reporte posterior en `06-tickets-soporte-resumen.md`). *Tomo la implementación técnica actual como la realidad operativa.*
-*   **Estado de los Recordatorios:** El PRD/Minuta los lista como obligatorios, pero los mails y soporte dictan que **no existen en producción**. *Tomo que no están implementados, catalogándolos como exclusión temporal y riesgo principal.*
+
+- La especificación incluye recordatorio; el hilo de lanzamiento, soporte y notas técnicas confirman que no está implementado. Se registra como brecha.
+- La especificación presenta UAT con datos ficticios; la nota de ambientes del 21/05/2026 afirma que solo producción está activa. Se prioriza la fuente más reciente.
+- La regla promete ausencia de superposición, pero la implementación documentada no es transaccional y soporte registró duplicados. La garantía no se considera satisfecha.
+- El resumen automático afirma que los dos duplicados fueron resueltos por huso horario; la transcripción confirma solo uno. El primero permanece sin causa verificada.
+- La especificación y las notas técnicas describen el dashboard protegido por middleware; tras logout se observaron las tres rutas de dashboard todavía renderizadas. No se resuelve si es exposición de datos, caché/UI residual o protección incompleta.
+- La especificación dice que la duración acepta cualquier entero positivo; la UI observada ofrece únicamente 15, 30, 45, 60, 90 y 120 minutos. Negocio debe confirmar cuál es la regla válida.
+- El PRD reconstruido incluye carga manual de clientes; la UI muestra “Nuevo Cliente”, pero el botón no produjo un formulario ni cambio visible. La funcionalidad queda parcial o no verificada, no confirmada como implementada.
 
 ## Preguntas abiertas
-*   ¿Existen SLA/SLOs oficiales de rendimiento y disponibilidad acordados, o seguiremos basándonos en las mediciones *ad-hoc* registradas por desarrollo (ej: page load <2s)?
-*   El manejo de Zonas Horarias, ¿debe reformularse desde la base para guardar todo en UTC?
-*   ¿Cómo resolveremos la ausencia de *Cron Jobs* para habilitar los recordatorios del día anterior de forma definitiva (pagar plan de Vercel vs usar servicio externo)?
-*   *Ofrecimiento MCP:* Actualmente Playwright está configurado. ¿Deseas que mapee y documente con capturas el "Happy Path" exacto que sigue hoy un usuario en el entorno en vivo (`cita-ai.vercel.app`), de manera de asentar con fidelidad cómo está implementada la interfaz real?
+
+- ¿Qué release objetivo se quiere definir: estabilización de lo existente o ampliación funcional?
+- ¿Qué ocurre con turnos existentes al bloquear, cuál es la ventana de cancelación y hasta cuándo puede reservarse?
+- ¿Cómo se modelan quien reserva para otro y varias agendas por organización?
+- ¿Qué estado tendrá un no-show y qué recordatorio se enviará, cuándo y por qué canal?
+- ¿Cuáles son los NFRs acordados de rendimiento, disponibilidad, concurrencia, accesibilidad y compatibilidad?
+- ¿Qué incluye el Plan Pro y cómo se cobra?
+- ¿Las rutas de dashboard deben redirigir inmediatamente al login y limpiar todo contenido al cerrar sesión?
+- ¿“Nuevo Cliente” está pendiente, roto o restringido por una condición no visible?
+- ¿La duración válida es cualquier entero o solo el conjunto ofrecido por la UI?
+
+## Próximo paso
+
+Continuar con `.prompts/2-Arquitectura/architecture-design.md`.

@@ -1,6 +1,6 @@
 # Entrevistas a profesionales — notas crudas
 
-**Período:** 24/03/2025 al 02/04/2025
+**Período:** 24/11/2024 al 02/12/2024
 **Hizo las entrevistas:** Mariana
 **Contactos conseguidos por:** Fernando
 
