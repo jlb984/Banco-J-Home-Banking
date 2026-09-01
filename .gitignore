@@ -32,6 +32,7 @@
 *.key
 claude_config.json
 mcp-config.json
+mcp_config.json
 .mcp.json
 *.postman_environment.json
 
@@ -61,3 +62,21 @@ node_modules/
 # ── Borradores ───────────────────────────────────────────────
 *.bak
 *.old
+
+# ── Skills de .claude/skills/ ────────────────────────────────
+# Casi todo lo que hay acá son ENLACES a .agents/skills/, que es donde
+# viven las skills de verdad. Git no los guarda como enlaces: subiría una
+# copia duplicada de cada skill. Así que se ignora todo por defecto y se
+# listan abajo las excepciones.
+#
+# Cada persona recrea sus enlaces al clonar, siguiendo
+# .guides/LLMs/claudeCode/claude-Code-skills-enlace.md
+#
+# ⚠️ Tiene que ser `.claude/skills/*` con asterisco, NO `.claude/skills/`.
+# Si se ignora el directorio, Git no entra a mirarlo y las líneas con `!`
+# de abajo dejan de tener efecto — sin avisar.
+.claude/skills/*
+
+# Excepciones: skills PROPIAS de Claude Code, que no son enlace y sí se
+# versionan. Al crear una, agregá su línea acá o queda fuera del repo.
+!.claude/skills/saludo-nombre-claude/

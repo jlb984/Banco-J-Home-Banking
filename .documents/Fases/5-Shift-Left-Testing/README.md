@@ -1,7 +1,11 @@
 # Fase 5: Shift-Left Testing
 
 ## 🎯 Objetivo de la Fase
-Mover las actividades de prueba "a la izquierda" en la línea de tiempo. Es decir, probar **antes** de que exista código. Aquí prevenimos defectos en lugar de solo detectarlos. Tambien se hace una valoracion o calificacion de cada CP propuesto en las US para la etapa de documentacion.
+Mover las actividades de prueba "a la izquierda" en la línea de tiempo: encontrar los defectos en los requisitos, antes de gastar una sola ejecución en probarlos. Aquí prevenimos defectos en lugar de solo detectarlos. Tambien se hace una valoracion o calificacion de cada CP propuesto en las US para la etapa de documentacion.
+
+> 🔄 **"Antes" no siempre quiere decir "antes de que exista el código".** En un proyecto nuevo sí: se inspecciona antes de desarrollar. En uno que ya está construido, la izquierda es otra — se inspecciona **antes de escribir el primer caso de prueba**, porque probar contra un requisito ambiguo es gastar el trabajo dos veces.
+>
+> Y cuando el software ya existe, la inspección gana una referencia más: además de contrastar la historia contra el PRD, se la contrasta contra **lo que la aplicación realmente hace**. Si no coinciden, es un hallazgo — y todavía no sabés si está mal el sistema o el requisito.
 
 ## 🔑 Conceptos Clave
 

@@ -64,6 +64,8 @@ Al terminar, confírmame:
 **Restricciones:**
 
 - **Todo criterio de aceptación que no salga de la descripción que te di se marca como hipótesis** en la tabla de Fuentes.
+- **La historia nace con `**Implementación:** Sin verificar`.** Estás escribiendo lo que se pidió, no comprobando lo que existe.
+- **Si lo que te describo resulta ser algo que la aplicación ya hace, este no es el prompt.** Una funcionalidad que ya está construida no se documenta de oído: se documenta mirándola. Dímelo y pasamos a la skill `documentar-historia`, que la explora y deja la evidencia.
 - No reescribas Epics existentes para hacer entrar la feature nueva. Si no encaja, es Nivel 2.
 
 Al finalizar sugerir refinar la historia nueva con `.prompts/4-Especificaciones (Backlog)/refine-stories.md`

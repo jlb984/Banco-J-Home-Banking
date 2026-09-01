@@ -9,12 +9,16 @@ El servidor MCP de PostgreSQL es la herramienta oficial para conectar tu Asisten
 *   AWS RDS / Aurora
 *   Neon / Render / Heroku Postgres
 
+**Paquete:** `@modelcontextprotocol/server-postgres`
+
+> 🔄 **Dato volátil: este paquete ya no se mantiene.** Sigue publicado y sigue funcionando —y **es de solo lectura, que es exactamente lo que necesitamos para QA**—, pero quedó archivado junto con el resto de los servidores de referencia. Si algún día deja de andar, hay reemplazos comunitarios activos; el que uses tiene que **seguir siendo de solo lectura**, o perdés la garantía de que la IA no pueda tocar los datos.
+
 ## 🛠️ Instalación
 
-Necesitas tener **Node.js** instalado. Abre tu terminal (Warp) y ejecuta:
+Necesitas tener **Node.js** instalado. No hace falta instalarlo aparte: `npx` lo baja solo la primera vez. Si querés comprobarlo antes, abre tu terminal (Warp) y ejecuta:
 
 ```bash
-npm install -g @modelcontextprotocol/server-postgres
+npx -y @modelcontextprotocol/server-postgres --help
 ```
 
 ## ⚙️ Configuración

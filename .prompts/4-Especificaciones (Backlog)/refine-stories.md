@@ -18,6 +18,8 @@ Actúa como un Analista de QA Senior experto en Behavior Driven Development (BDD
 
 Primero, lee `.context/PBI/epic-tree.md` y muéstrame la lista de historias disponibles con su ID y su título. **Déjame elegir por ID**: no me pidas que te pegue el contenido de la historia, ya está escrita en el repositorio.
 
+> **Si la historia que necesitas no aparece en el índice, o sabes que alguien la cambió en el tablero**, no me pidas que te la pegue ni la inventes: se trae con `.prompts/4-Especificaciones (Backlog)/pbi-sync-from-jira.md`, que la escribe en local y deja constancia de la fecha. Dilo y detente.
+
 Una vez que elija, lee el `story.md` correspondiente y trabaja sobre él.
 
 **Comprueba tú mismo si tienes el MCP de Atlassian conectado.** Revisa tus herramientas disponibles; no me lo preguntes a mí.
@@ -47,6 +49,15 @@ Asegúrate de cubrir:
 > aceptación inventado que nadie revisó se prueba igual que uno acordado, y ahí es donde el
 > equipo descubre tarde que probó lo que no era.
 
+> **Si la historia ya trae valores marcados como `Observado`, respétalos y no los reescribas.**
+> Salieron de mirar la aplicación y tienen evidencia detrás. Pero **observado no es acordado**:
+> si ningún documento los respalda, la pregunta abierta sigue viva aunque el dato sea cierto.
+> Que el sistema se comporte de una manera no significa que deba comportarse así.
+>
+> **Y el campo `Implementación` no lo tocas.** Lo escribe quien haya ido a verificar el
+> comportamiento real; si llega como `Sin verificar`, se queda `Sin verificar`. Refinar la
+> redacción de una historia no comprueba que la funcionalidad exista.
+
 ### **Fase 3: Sincronización con Jira**
 
 *   **Si tienes el MCP de Atlassian:** actualiza la descripción en Jira con la versión refinada y los escenarios Gherkin.
@@ -69,6 +80,7 @@ El contenido debe seguir esta estructura:
 # Story: [Título Refinado]
 **ID:** [KEY de Jira o ID temporal]
 **Epic:** [EPIC-KEY]
+**Implementación:** [Implementada | Parcial | No encontrada | Sin verificar]
 **Estado de sincronización:** [Sincronizado con Jira | PENDIENTE DE SUBIR A JIRA]
 **Estado:** Refinado
 
@@ -104,6 +116,7 @@ El contenido debe seguir esta estructura:
 | Dato / afirmación | De dónde sale |
 | :--- | :--- |
 | [Valor, límite o mensaje] | `prd.md` · [sección] |
+| [Valor, límite o mensaje] | **Observado** — [entorno], [fecha]. Evidencia: `[ruta]` |
 | [Valor, límite o mensaje] | **Hipótesis** — no hay documento que lo respalde |
 
 ## Contradicciones detectadas
@@ -116,6 +129,8 @@ El contenido debe seguir esta estructura:
 **Restricciones:**
 
 - **Todo valor concreto que fijes tú y no salga de un documento se marca como hipótesis** en la tabla de Fuentes, y genera una pregunta abierta.
+- **`Observado` solo lo escribe quien miró la aplicación**, y siempre con entorno, fecha y evidencia. Tú refinas texto: no lo uses para un valor que dedujiste.
+- **El campo `Implementación` se conserva tal como venía.** No lo estimes.
 - **Nunca escribas una credencial en claro**, ni siquiera de un usuario de prueba.
 - Las tres últimas secciones nunca se omiten. Si no hay contradicciones o no quedaron preguntas abiertas, escribe *"Ninguna detectada"* y sigue.
 

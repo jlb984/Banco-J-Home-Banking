@@ -33,7 +33,7 @@ Una vez instalados los servidores, tu archivo de configuración debería verse a
     },
     "playwright": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-playwright"]
+      "args": ["@playwright/mcp@latest"]
     }
   }
 }

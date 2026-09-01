@@ -4,6 +4,12 @@ Este prompt guía una sesión profunda de pruebas exploratorias en la Interfaz d
 
 **Requisito previo:** Smoke Test aprobado. Si no existe ningún reporte en `.context/testing/exploratory/smoke/`, sugiere al usuario la ejecución de `.prompts/6-Testing Exploratorio/smoke-test.md` antes de invertir tiempo acá.
 
+> ⚠️ **Y algo que también tiene que existir: la historia contra la que vas a probar.** Este prompt busca defectos comparando la aplicación con lo que está escrito. Si la funcionalidad no tiene historia, o su campo `**Implementación:**` dice `Sin verificar`, **no hay contra qué comparar**: cualquier cosa rara que encuentres puede ser un defecto o puede ser cómo se decidió que funcione, y no vas a poder distinguirlo.
+>
+> En ese caso el paso previo es otro: la skill `documentar-historia` explora la funcionalidad **para especificarla**, y deja la vara escrita. Después volvés acá a medir contra ella.
+>
+> **Una explora para escribir la vara; esta mide contra ella.** No son intercambiables.
+
 **Inputs necesarios:**
 1.  Contenido de `.context/infrastructure/environments.md` (URL y entorno)
 2.  Contenido de `.context/infrastructure/test-data-strategy.md` (usuarios y datos de prueba)

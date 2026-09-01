@@ -138,13 +138,9 @@ args = [
 command = "npx"
 args = [
   "-y",
-  "@modelcontextprotocol/server-atlassian"
+  "mcp-remote",
+  "https://mcp.atlassian.com/v1/mcp/authv2"
 ]
-
-[mcp_servers.atlassian.env]
-JIRA_BASE_URL = "https://tuDominio.atlassian.net"
-JIRA_EMAIL = "tu.email@ejemplo.com"
-JIRA_API_TOKEN = "{{JIRA_API_TOKEN}}"
 
 # ============================================
 # SERVIDORES HTTP STREAMABLE (REMOTOS)

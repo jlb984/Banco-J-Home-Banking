@@ -17,7 +17,9 @@ Este prompt te ayuda a identificar riesgos técnicos y de negocio asociados a un
 
 Actúa como un Gerente de Pruebas responsable de la estrategia de calidad. Tu objetivo es identificar riesgos técnicos y de negocio, y diseñar un Plan de Pruebas que los mitigue eficientemente.
 
-Primero, lee `.context/PBI/epic-tree.md` y muéstrame las Epics disponibles. **Déjame elegir por ID**: no me pidas un resumen a mano de algo que ya está escrito. Con la Epic elegida, lee su `epic.md` y los `story.md` que cuelgan de ella.
+Primero, lee `.context/PBI/epic-tree.md` y muéstrame las Epics disponibles. **Déjame elegir por ID**: no me pidas un resumen a mano de algo que ya está escrito.
+
+> **Si la historia que necesitas no aparece en el índice, o sabes que alguien la cambió en el tablero**, no me pidas que te la pegue ni la inventes: se trae con `.prompts/4-Especificaciones (Backlog)/pbi-sync-from-jira.md`, que la escribe en local y deja constancia de la fecha. Dilo y detente. Con la Epic elegida, lee su `epic.md` y los `story.md` que cuelgan de ella.
 
 Lee también:
 *   `.context/infrastructure/environments.md` — para saber **qué entornos existen de verdad y cómo se llaman en este proyecto**. Usa esos nombres. No asumas que hay un "Staging": puede no existir, o llamarse UAT, homologación o preproducción.
@@ -37,7 +39,7 @@ Clasifícalos por **Probabilidad** (1-5) e **Impacto** (1-5).
 
 ### **2. Estrategia de Pruebas (Test Strategy)**
 Define qué tipos de pruebas son necesarios para mitigar esos riesgos.
-*   **Pruebas Unitarias:** ¿Qué lógica compleja debe probar el desarrollador?
+*   **Pruebas Unitarias:** ¿Qué lógica compleja tiene que quedar cubierta a ese nivel? Si el código ya existe, la pregunta no es qué escribirá el desarrollador sino qué hay hoy y qué falta.
 *   **Pruebas de Integración:** ¿Qué APIs o bases de datos interactúan?
 *   **Pruebas E2E (UI):** ¿Qué flujos críticos debe recorrer el usuario?
 *   **Pruebas No Funcionales:** ¿Seguridad, Performance, Accesibilidad?
@@ -108,6 +110,6 @@ El contenido debe seguir esta estructura:
 - **No inventes entornos.** Si el plan necesita uno que `environments.md` no lista, va a "Preguntas abiertas" como bloqueante.
 - Las tres últimas secciones nunca se omiten. Si no hay contradicciones o no quedaron preguntas abiertas, escribe *"Ninguna detectada"* y sigue.
 
-Una vez aprobado el plan y desplegado el entorno, sugerir iniciar la ejecución con `.prompts/6-Testing Exploratorio/smoke-test.md`
+Una vez aprobado el plan, y con el entorno disponible —desplegado ahora o funcionando desde antes—, sugerir iniciar la ejecución con `.prompts/6-Testing Exploratorio/smoke-test.md`
 
 ### **FIN DEL PROMPT**

@@ -34,11 +34,11 @@ Con esa respuesta, ejecuta una de estas rutas:
 ### **Ruta A — Sin Xray**
 Si **NO** hay Xray disponible:
 1.  Documenta los casos de prueba manuales o automatizables.
-2.  Si tienes el MCP de Atlassian, crea incidencias de Jira de tipo **Test** (o **Task** con etiqueta `Test-Case` si no existe el tipo Test).
+2.  Si tienes el MCP de Atlassian, **comprueba primero qué tipos de actividad existen en ese espacio** y crea las actividades con el que encuentres, en este orden de preferencia: **`Test Case`**, **`Test`**, o **`Tarea`** con la etiqueta `Test-Case` si no existe ninguno de los dos. **Dime cuál usaste**: si cayeron en `Tarea`, la jerarquía se pierde y no da ningún error.
 3.  Vincula **obligatoriamente** cada test a su historia de usuario.
 4.  Mantén el formato:
     *   Manual: `Acción -> Resultado Esperado`.
-    *   Automatizable: escenario en Gherkin dentro de la descripción o los comentarios de la incidencia.
+    *   Automatizable: escenario en Gherkin dentro de la descripción o los comentarios de la actividad.
 5.  Genera siempre un documento local de respaldo por cada caso creado.
 
 ### **Ruta B — Con Xray**
