@@ -75,11 +75,12 @@ herramientas). Si el `.gitignore` no lo cubre, eso es un hallazgo: decilo.
 git branch --show-current
 ```
 
-**Si estás parado en la rama principal y el repositorio pide no trabajar ahí, creá la rama
-antes de commitear.** No preguntes: es lo que las convenciones ya declaran. Usá el patrón
-de nombres que el repositorio define y un nombre que describa el trabajo, no la fecha.
+Aplicá la política que declara el repositorio. **Si exige no trabajar en la rama principal,
+creá una rama antes de commitear. Si permite commits directos, no crees una rama solo por
+costumbre.** Cuando corresponda crearla, usá el patrón de nombres que el repositorio define y
+un nombre que describa el trabajo, no la fecha.
 
-Decí en qué rama quedaron los commits y que la rama principal no se tocó.
+Decí en qué rama quedaron los commits y si la rama principal se modificó.
 
 ## Paso 4 · Proponé el corte
 
