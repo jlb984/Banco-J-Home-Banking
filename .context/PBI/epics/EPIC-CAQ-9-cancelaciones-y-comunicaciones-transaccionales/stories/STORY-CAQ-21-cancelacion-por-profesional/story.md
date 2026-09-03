@@ -1,21 +1,62 @@
-# Story: Como profesional, quiero cancelar un turno desde mi panel, para actualizar mi agenda
+# Story: Cancelación de un turno por el profesional
 
 **ID:** CAQ-21
 **Epic:** CAQ-9
 **Implementación:** Parcial
 **Estado de sincronización:** Sincronizado con Jira
+**Estado:** Refinado
 
 ## Descripción
 
 Como profesional, quiero cancelar un turno desde mi panel, para actualizar mi agenda.
 
-## Criterios de Aceptación (Borrador)
+## Análisis INVEST
 
-- [x] El profesional autenticado puede iniciar la cancelación desde un turno de su agenda.
-- [ ] El profesional solo puede cancelar turnos asociados con su cuenta.
-- [ ] No se puede cancelar un turno pasado.
-- [ ] La cancelación cambia el estado a `cancelled` y libera el horario.
-- [x] El motivo de cancelación no se exige mientras negocio no defina esa regla.
+| Criterio | Cumple | Observación |
+| :--- | :--- | :--- |
+| Independiente | Sí | Puede validarse con un turno futuro preparado. |
+| Negociable | Sí | Estado y liberación están definidos; el motivo sigue abierto. |
+| Valiosa | Sí | Mantiene la agenda y la disponibilidad actualizadas. |
+| Estimable | Sí | El flujo, la restricción temporal y los efectos esperados están documentados. |
+| Pequeña | Sí | Cubre la cancelación desde el panel. |
+| Testeable | Sí | La UI, persistencia, aislamiento y liberación son verificables; la prueba observada detectó una brecha. |
+
+## Criterios de Aceptación (Gherkin)
+
+### Escenario 1: Cancelar un turno futuro propio
+
+**Given** que el profesional autenticado tiene un turno futuro `confirmed` asociado con su cuenta
+**When** inicia y confirma la cancelación desde su agenda
+**Then** el sistema cambia el estado persistido a `cancelled`
+**And** retira el turno de las próximas citas
+**And** vuelve a ofrecer el horario según las reglas vigentes
+
+### Escenario 2: Impedir cancelar un turno ajeno
+
+**Given** que el turno pertenece a otro profesional
+**When** el usuario intenta cancelar ese turno
+**Then** el sistema rechaza la operación
+**And** no modifica el estado ni la disponibilidad
+
+### Escenario 3: Impedir cancelar un turno pasado
+
+**Given** que el turno asociado con la cuenta está en el pasado
+**When** el profesional intenta cancelarlo
+**Then** el sistema rechaza la operación
+**And** conserva su estado
+
+### Escenario 4: Confirmar la acción en la interfaz observada
+
+**Given** que el profesional selecciona «Cancelar» en una cita futura
+**When** la interfaz solicita confirmación
+**Then** muestra «¿Estás seguro de que deseas cancelar esta cita? Esta acción no se puede deshacer.»
+**And** no exige un motivo
+
+## Notas de QA
+
+* Repetir la verificación con turno sintético y comprobar UI, API y disponibilidad después de una navegación nueva.
+* La persistencia y liberación fallaron en producción el 02/09/2026; no tratar el retiro inmediato de la UI como éxito.
+* La implementación se conserva `Parcial`.
 
 ## Fuentes
 

@@ -3,15 +3,15 @@
 **Origen:** `.context/architecture/prd.md`
 **Fuentes del backlog:** documentación local y respaldo histórico de Confluence
 **Tipo de proyecto:** Brownfield
-**Fecha:** 02/09/2026
+**Fecha:** 03/09/2026
 
-| Epic | Stories | Sin verificar | Estado de sincronización |
-| :--- | :---: | :---: | :--- |
-| CAQ-2 [Epic] Cuenta y activación del profesional | 4 | 4 | Sincronizado |
-| CAQ-7 [Epic] Agenda, disponibilidad y gestión de turnos | 5 | 5 | Sincronizado |
-| CAQ-8 [Epic] Página pública y auto-reserva | 4 | 4 | Sincronizado |
-| CAQ-9 [Epic] Cancelaciones y comunicaciones transaccionales | 5 | 4 | Sincronizado |
-| CAQ-10 [Epic] Clientes y límite freemium | 4 | 4 | Sincronizado |
+| Epic | Stories | Refinadas | Sin verificar | Estado de sincronización |
+| :--- | :---: | :---: | :---: | :--- |
+| CAQ-2 [Epic] Cuenta y activación del profesional | 4 | 4 | 4 | Sincronizado |
+| CAQ-7 [Epic] Agenda, disponibilidad y gestión de turnos | 5 | 5 | 5 | Sincronizado |
+| CAQ-8 [Epic] Página pública y auto-reserva | 4 | 4 | 4 | Sincronizado |
+| CAQ-9 [Epic] Cancelaciones y comunicaciones transaccionales | 5 | 5 | 4 | Sincronizado |
+| CAQ-10 [Epic] Clientes y límite freemium | 4 | 4 | 4 | Sincronizado |
 
 ## Epics identificadas, pendientes de desglosar
 
@@ -20,6 +20,11 @@
 ## Pendiente de subir a Jira
 
 * Ninguna: todo sincronizado.
+
+## Estado del refinamiento
+
+* Las 22 Stories están refinadas con análisis INVEST, criterios de aceptación en Gherkin, notas de QA, fuentes, contradicciones y preguntas abiertas.
+* El 03/09/2026 se sincronizaron mediante el MCP de Atlassian las descripciones refinadas de las 22 Stories, desde CAQ-3 hasta CAQ-28.
 
 ## Pendiente de verificar contra la aplicación
 
@@ -38,6 +43,7 @@
 * La especificación exige impedir superposiciones, pero las notas técnicas documentan una validación no transaccional y soporte registró duplicados. El comportamiento esperado se conserva y la implementación queda sin verificar.
 * El resumen automático atribuye ambos casos de turnos duplicados a husos horarios; la transcripción confirma esa causa solo para uno. Se toma la transcripción como fuente original.
 * La especificación funcional exige que cancelar cambie el turno a `cancelled` y libere el horario; en CAQ-21 la UI retiró temporalmente el turno, pero una navegación nueva lo mostró otra vez, el endpoint autenticado lo mantuvo `confirmed` y la disponibilidad pública no liberó el slot.
+* La configuración local del repositorio identifica `BJHB` como Project Key, pero el backlog vigente y sus 22 Stories existen en Jira bajo las claves `CAQ-2` a `CAQ-28`. El proyecto `BJHB` contiene un backlog diferente e incompleto. Para evitar sobrescribir tickets ajenos a este espejo, la sincronización de esta fase se realizó sobre `CAQ`.
 
 ## Preguntas abiertas
 
