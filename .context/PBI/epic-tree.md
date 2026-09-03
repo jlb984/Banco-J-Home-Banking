@@ -2,6 +2,7 @@
 
 **Origen:** `.context/architecture/prd.md`
 **Fuentes del backlog:** documentación local y respaldo histórico de Confluence
+**Decisiones vigentes para el próximo release:** `.context/PBI/decisiones-po-proximo-release.md`
 **Tipo de proyecto:** Brownfield
 **Fecha:** 03/09/2026
 
