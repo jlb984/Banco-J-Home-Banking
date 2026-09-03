@@ -6,6 +6,16 @@
 ![Focus](https://img.shields.io/badge/Focus-Shift%20Left%20%26%20Exploratory-blue)
 ![LLM](https://img.shields.io/badge/LLM-Copilot-orange)
 
+## Sobre esta ejecución demo
+
+Este repositorio contiene la ejecución demo del curso **QA IA Augmentation**, dictado para
+colaboradores de **Ecosistemas** durante agosto y septiembre de 2026.
+
+El repositorio es público para que los alumnos puedan consultarlo, clonarlo o crear un fork.
+Clonar el proyecto no concede permisos de escritura sobre
+`jlb984/Banco-J-Home-Banking`: los cambios solo pueden subirse a un repositorio propio o
+proponerse mediante un Pull Request. Únicamente el propietario puede modificar las ramas del
+repositorio original o aceptar esos cambios.
 
 ---
 
