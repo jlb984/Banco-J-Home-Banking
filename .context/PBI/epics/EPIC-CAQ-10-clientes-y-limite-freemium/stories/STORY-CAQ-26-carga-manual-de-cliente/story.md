@@ -52,6 +52,12 @@ Como profesional, quiero cargar un cliente manualmente, para mantener completo m
 * Verificar aislamiento entre profesionales.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Bloqueante
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-26.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

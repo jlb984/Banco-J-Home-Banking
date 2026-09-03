@@ -5,13 +5,13 @@
 **Tipo de proyecto:** Brownfield
 **Fecha:** 03/09/2026
 
-| Epic | Stories | Refinadas | Sin verificar | Estado de sincronización |
-| :--- | :---: | :---: | :---: | :--- |
-| CAQ-2 [Epic] Cuenta y activación del profesional | 4 | 4 | 4 | Sincronizado |
-| CAQ-7 [Epic] Agenda, disponibilidad y gestión de turnos | 5 | 5 | 5 | Sincronizado |
-| CAQ-8 [Epic] Página pública y auto-reserva | 4 | 4 | 4 | Sincronizado |
-| CAQ-9 [Epic] Cancelaciones y comunicaciones transaccionales | 5 | 5 | 4 | Sincronizado |
-| CAQ-10 [Epic] Clientes y límite freemium | 4 | 4 | 4 | Sincronizado |
+| Epic | Stories | Refinadas | Inspeccionadas | Sin verificar | Estado de sincronización |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| CAQ-2 [Epic] Cuenta y activación del profesional | 4 | 4 | 4 | 4 | Sincronizado |
+| CAQ-7 [Epic] Agenda, disponibilidad y gestión de turnos | 5 | 5 | 5 | 5 | Sincronizado |
+| CAQ-8 [Epic] Página pública y auto-reserva | 4 | 4 | 4 | 4 | Sincronizado |
+| CAQ-9 [Epic] Cancelaciones y comunicaciones transaccionales | 5 | 5 | 5 | 4 | Sincronizado |
+| CAQ-10 [Epic] Clientes y límite freemium | 4 | 4 | 4 | 4 | Sincronizado |
 
 ## Epics identificadas, pendientes de desglosar
 
@@ -25,6 +25,13 @@
 
 * Las 22 Stories están refinadas con análisis INVEST, criterios de aceptación en Gherkin, notas de QA, fuentes, contradicciones y preguntas abiertas.
 * El 03/09/2026 se sincronizaron mediante el MCP de Atlassian las descripciones refinadas de las 22 Stories, desde CAQ-3 hasta CAQ-28.
+
+## Estado de Shift-Left Testing
+
+* Las 22 Stories fueron inspeccionadas contra el PRD, sus fuentes y, cuando correspondía, el comportamiento observado.
+* Se registraron 69 defectos de requisitos: 8 Stories quedaron con valoración `Bloqueante` y 14 con `Requiere Cambios`.
+* Se generaron cinco planes de prueba basados en riesgos, uno por Epic. La ejecución mutante queda bloqueada porque el único entorno confirmado es Producción y no existen seed ni reset seguros.
+* Las 22 descripciones corregidas y sus comentarios de actividad Shift-Left fueron sincronizados con Jira el 03/09/2026.
 
 ## Pendiente de verificar contra la aplicación
 

@@ -109,6 +109,12 @@ Como profesional, quiero iniciar sesión con mi correo electrónico y contraseñ
 * No usar credenciales ni información personal reales; el único entorno documentado es producción y no está autorizado modificar datos durante este refinamiento.
 * La implementación continúa `Sin verificar`; los datos observados documentan una brecha, pero este refinamiento no comprueba que siga vigente.
 
+## Inspección Shift-Left
+
+**Resultado:** Bloqueante
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-4.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

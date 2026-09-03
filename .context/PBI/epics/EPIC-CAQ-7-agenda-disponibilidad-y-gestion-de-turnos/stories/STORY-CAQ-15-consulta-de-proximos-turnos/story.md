@@ -49,6 +49,12 @@ Como profesional, quiero consultar mis próximos turnos, para organizar mi jorna
 * El estado vacío está observado; la lista poblada y el aislamiento no lo están.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Bloqueante
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-15.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

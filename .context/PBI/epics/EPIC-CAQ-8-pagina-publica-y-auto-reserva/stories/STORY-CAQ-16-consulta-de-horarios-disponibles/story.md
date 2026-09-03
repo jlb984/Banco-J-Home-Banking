@@ -48,6 +48,12 @@ Como cliente final, quiero consultar los horarios disponibles, para elegir una o
 * Verificar límites de día y semana en la zona horaria finalmente acordada.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Requiere Cambios
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-16.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

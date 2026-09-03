@@ -50,6 +50,12 @@ Como cliente final, quiero conservar mis datos si otro cliente toma el horario, 
 * Verificar UI, respuesta API y persistencia.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Requiere Cambios
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-19.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

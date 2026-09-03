@@ -92,6 +92,12 @@ Como profesional, quiero solicitar un enlace de recuperación mediante mi correo
 * No utilizar cuentas, correos ni credenciales reales; el único entorno documentado es producción y este refinamiento no autoriza generar correos ni modificar contraseñas allí.
 * La implementación continúa `Sin verificar`; el uso de PKCE y la vigencia documentada no prueban el comportamiento actual.
 
+## Inspección Shift-Left
+
+**Resultado:** Requiere Cambios
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-5.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

@@ -52,6 +52,12 @@ Como cliente final, quiero confirmar un turno sin crear una cuenta, para reserva
 * Probar reenvío de formulario y conflicto concurrente.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Requiere Cambios
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-18.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

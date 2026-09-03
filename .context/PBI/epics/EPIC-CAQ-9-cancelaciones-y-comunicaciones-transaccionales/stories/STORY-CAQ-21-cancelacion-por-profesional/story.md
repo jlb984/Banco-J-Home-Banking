@@ -58,6 +58,12 @@ Como profesional, quiero cancelar un turno desde mi panel, para actualizar mi ag
 * La persistencia y liberación fallaron en producción el 02/09/2026; no tratar el retiro inmediato de la UI como éxito.
 * La implementación se conserva `Parcial`.
 
+## Inspección Shift-Left
+
+**Resultado:** Bloqueante
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-21.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

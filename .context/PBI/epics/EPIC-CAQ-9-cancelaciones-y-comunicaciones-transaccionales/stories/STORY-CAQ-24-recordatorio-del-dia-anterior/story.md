@@ -47,6 +47,12 @@ Como cliente final, quiero recibir un recordatorio el día anterior, para reduci
 * La idempotencia es una hipótesis pendiente.
 * La implementación continúa `Sin verificar`; las fuentes indican que quedó fuera del lanzamiento.
 
+## Inspección Shift-Left
+
+**Resultado:** Bloqueante
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-24.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

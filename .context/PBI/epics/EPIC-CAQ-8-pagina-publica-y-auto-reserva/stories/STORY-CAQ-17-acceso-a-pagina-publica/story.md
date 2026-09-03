@@ -48,6 +48,12 @@ Como cliente final, quiero acceder a la página pública de un profesional, para
 * Revisar que la respuesta pública no incluya campos privados.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Requiere Cambios
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-17.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

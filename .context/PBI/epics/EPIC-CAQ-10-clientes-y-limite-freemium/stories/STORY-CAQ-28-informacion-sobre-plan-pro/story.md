@@ -50,6 +50,12 @@ Como profesional que alcanzó el límite, quiero recibir información clara sobr
 * No evaluar precio ni beneficios como criterio hasta que exista una definición.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Requiere Cambios
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-28.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

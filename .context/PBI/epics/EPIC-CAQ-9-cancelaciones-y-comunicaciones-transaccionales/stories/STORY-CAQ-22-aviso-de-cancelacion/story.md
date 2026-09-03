@@ -49,6 +49,12 @@ Como parte de un turno cancelado, quiero recibir un aviso, para conocer el cambi
 * El escenario de falla conserva el turno por hipótesis y requiere ratificación.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Requiere Cambios
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-22.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

@@ -49,6 +49,12 @@ Como participante de una reserva, quiero recibir su confirmación por correo, pa
 * El escenario de falla es una hipótesis pendiente de ratificación.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Requiere Cambios
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-23.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

@@ -50,6 +50,12 @@ Como profesional, quiero definir la duración estándar de mis turnos, para gene
 * No aprobar valores fuera de la interfaz hasta resolver la contradicción.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Bloqueante
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-12.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

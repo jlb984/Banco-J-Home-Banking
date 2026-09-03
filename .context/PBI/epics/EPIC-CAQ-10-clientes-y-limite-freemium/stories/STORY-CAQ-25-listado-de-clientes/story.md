@@ -48,6 +48,12 @@ Como profesional, quiero consultar mi listado de clientes, para conocer a las pe
 * No asumir historial, filtros ni paginación como parte de esta historia.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Requiere Cambios
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-25.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

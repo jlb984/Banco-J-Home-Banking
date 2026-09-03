@@ -52,6 +52,12 @@ Como profesional, quiero registrar un turno manualmente, para incorporar reserva
 * Validar ausencia de duplicados ante envíos repetidos.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Requiere Cambios
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-14.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

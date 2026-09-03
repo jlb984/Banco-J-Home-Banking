@@ -53,6 +53,12 @@ Como profesional, quiero configurar mi disponibilidad semanal, para ofrecer úni
 * Comprobar el reemplazo completo y su efecto en el endpoint público.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Requiere Cambios
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-11.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

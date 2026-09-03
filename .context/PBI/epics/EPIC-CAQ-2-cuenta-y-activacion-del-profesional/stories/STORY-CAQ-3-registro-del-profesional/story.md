@@ -137,6 +137,12 @@ Como profesional, quiero registrarme con mi nombre completo, correo electrónico
 * Verificar por separado los cinco efectos del flujo exitoso: cuenta, sesión, URL, redirección y correo.
 * La implementación continúa `Sin verificar`; este refinamiento no confirma el comportamiento de la interfaz ni de Supabase.
 
+## Inspección Shift-Left
+
+**Resultado:** Requiere Cambios
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-3.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

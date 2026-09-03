@@ -88,6 +88,12 @@ Como profesional, quiero localizar y copiar mi URL pública desde la experiencia
 * No crear cuentas ni modificar datos en producción durante este refinamiento; actualmente no existe un entorno de prueba confirmado.
 * La implementación continúa `Sin verificar`; los reportes y observaciones documentan que la URL no estaba expuesta, pero no confirman el estado actual.
 
+## Inspección Shift-Left
+
+**Resultado:** Bloqueante
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-6.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

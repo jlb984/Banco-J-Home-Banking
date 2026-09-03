@@ -50,6 +50,12 @@ Como cliente final, quiero cancelar mediante el enlace de mi correo, para libera
 * Verificar persistencia y disponibilidad pública después de cancelar.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Requiere Cambios
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-20.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |

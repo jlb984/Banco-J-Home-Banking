@@ -51,6 +51,12 @@ Como profesional, quiero bloquear períodos puntuales, para evitar reservas cuan
 * No ejecutar en producción con turnos reales.
 * La implementación continúa `Sin verificar`.
 
+## Inspección Shift-Left
+
+**Resultado:** Bloqueante
+
+**Reporte:** `.context/testing/inspections/inspeccion-CAQ-13.md`
+
 ## Fuentes
 
 | Dato / afirmación | De dónde sale |
