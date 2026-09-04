@@ -8,6 +8,10 @@ Este prompt te ayuda a añadir una nueva funcionalidad al proyecto DESPUÉS de h
 1.  Contenido de `.context/PBI/epic-tree.md`
 2.  La descripción de la nueva feature (esto sí me lo tienes que pedir)
 
+**Destino obligatorio de esta ejecución:** lee `.context/project-connections.md` y usa Jira
+`https://jlb984.atlassian.net/`, Project Key `BJHB`. Antes de crear, busca equivalencias en
+`BJHB` por intención, actores y criterios; no deduzcas duplicados solo por el título.
+
 ---
 
 ### **INICIO DEL PROMPT**

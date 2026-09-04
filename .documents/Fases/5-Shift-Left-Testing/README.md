@@ -1,5 +1,10 @@
 # Fase 5: Shift-Left Testing
 
+> **Conexiones de esta ejecución:** Jira
+> `https://jlb984.atlassian.net/`, Project Key `BJHB`; GitHub
+> `https://github.com/jlb984/Banco-J-Home-Banking`. Toda actualización y comentario
+> Shift-Left debe dirigirse a `BJHB`.
+
 ## 🎯 Objetivo de la Fase
 Mover las actividades de prueba "a la izquierda" en la línea de tiempo: encontrar los defectos en los requisitos, antes de gastar una sola ejecución en probarlos. Aquí prevenimos defectos en lugar de solo detectarlos. Tambien se hace una valoracion o calificacion de cada CP propuesto en las US para la etapa de documentacion.
 

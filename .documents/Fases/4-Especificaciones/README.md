@@ -1,5 +1,11 @@
 # Fase 4: Especificaciones (Backlog)
 
+> **Conexiones de esta ejecución:** Jira
+> `https://jlb984.atlassian.net/`, Project Key `BJHB`; GitHub
+> `https://github.com/jlb984/Banco-J-Home-Banking`. Los prompts deben leer
+> `.context/project-connections.md` antes de operar y no inferir el proyecto desde una key
+> heredada.
+
 ## 🎯 Objetivo de la Fase
 Crear y refinar las **Historias de Usuario** que guiarán el desarrollo y las pruebas. Aquí traducimos el PRD en tareas accionables.
 
@@ -21,7 +27,7 @@ Lenguaje estructurado para definir criterios de aceptación:
 *   **Then:** Resultado esperado.
 
 ### 3. Jira-First Workflow
-La fuente de la verdad es Jira. La carpeta local `.context/PBI/` es un espejo para que la IA pueda analizar el backlog.
+La fuente de la verdad es el proyecto Jira `BJHB`. La carpeta local `.context/PBI/` es un espejo para que la IA pueda analizar el backlog.
 
 **Pero Jira no bloquea la fase.** Si todavía no hay proyecto en Jira, o el MCP no responde, los prompts escriben igual el backlog local con IDs temporales (`PBI-01`) y marcan cada archivo con `Estado de sincronización: PENDIENTE DE SUBIR A JIRA`. El índice `epic-tree.md` lleva la lista de lo que queda por subir. Se trabaja igual, y no se pierde el rastro de lo que falta sincronizar.
 

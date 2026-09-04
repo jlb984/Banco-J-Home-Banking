@@ -8,6 +8,11 @@ Este prompt es el núcleo del **QA Augmentation**. Toma una User Story "cruda" d
 1.  Contenido de `.context/PBI/epic-tree.md`
 2.  El `story.md` de la historia a refinar
 
+**Destino obligatorio de esta ejecución:** Jira
+`https://jlb984.atlassian.net/`, Project Key `BJHB`, según
+`.context/project-connections.md`. Solo actualiza una key `BJHB-*`; si aparece una key de
+otro proyecto, detente y exige un mapeo real para evitar sobrescribir el ticket equivocado.
+
 ---
 
 ### **INICIO DEL PROMPT**

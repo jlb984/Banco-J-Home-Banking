@@ -9,6 +9,11 @@ Este prompt te convierte en un "QA Augmentation Detective". Su objetivo es encon
 2.  El `story.md` de la historia a inspeccionar
 3.  Contenido de `.context/architecture/prd.md` (para contrastar)
 
+**Destino obligatorio de esta ejecución:** Jira
+`https://jlb984.atlassian.net/`, Project Key `BJHB`, según
+`.context/project-connections.md`. Todo comentario o corrección debe escribirse sobre la
+Story `BJHB-*` correspondiente.
+
 ---
 
 ### **INICIO DEL PROMPT**

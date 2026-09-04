@@ -1,6 +1,6 @@
 # Plan de Pruebas: Cancelaciones y comunicaciones transaccionales
 
-**Epic:** CAQ-9
+**Epic:** BJHB-5
 **Fecha:** 03/09/2026
 
 ## 1. Matriz de Riesgos del Producto
@@ -37,7 +37,7 @@
 
 | Dato / afirmación | De dónde sale |
 | :--- | :--- |
-| Falla observada de CAQ-21 | `.context/PBI/epics/EPIC-CAQ-9-cancelaciones-y-comunicaciones-transaccionales/stories/STORY-CAQ-21-cancelacion-por-profesional/story.md` |
+| Falla observada de BJHB-24 | `.context/PBI/epics/EPIC-BJHB-5-cancelaciones-y-comunicaciones-transaccionales/stories/STORY-BJHB-24-cancelacion-por-profesional/story.md` |
 | Restricción de entorno | `.context/infrastructure/environments.md` · Riesgos |
 | Datos necesarios | `.context/infrastructure/test-data-strategy.md` · Escenarios mínimos |
 | Scoring | **Hipótesis** — valoración de riesgo de QA |

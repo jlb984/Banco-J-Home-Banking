@@ -2,6 +2,14 @@
 
 ## **Modernizando el Testing con IA, MCPs y Flujos de Desarrollo**
 
+## Ejecución demo de Banco J Home Banking
+
+Esta edición del curso trabaja exclusivamente con Jira
+[`https://jlb984.atlassian.net/`](https://jlb984.atlassian.net/), Project Key `BJHB`, y con
+el repositorio GitHub
+[`jlb984/Banco-J-Home-Banking`](https://github.com/jlb984/Banco-J-Home-Banking). Estos
+destinos deben verificarse antes de toda sincronización.
+
 ---
 
 ### **1\. Resumen Ejecutivo**

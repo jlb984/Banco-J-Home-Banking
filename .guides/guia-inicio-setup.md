@@ -4,6 +4,15 @@
 
 No te preocupes si nunca has usado estas herramientas. Esta guía te llevará paso a paso para instalar todo lo necesario desde cero.
 
+## Destinos de la ejecución demo
+
+* **Jira:** `https://jlb984.atlassian.net/`
+* **Project Key:** `BJHB`
+* **GitHub:** `https://github.com/jlb984/Banco-J-Home-Banking`
+
+Guarda estos tres valores como referencia: configurar una herramienta no alcanza; antes de
+leer, crear o sincronizar trabajo hay que confirmar que está apuntando a estos destinos.
+
 ---
 
 ## 1. Tu Centro de Mando: Visual Studio Code (VS Code)

@@ -10,6 +10,17 @@ Este servidor MCP conecta tu Asistente de IA directamente con tu instancia de Ji
 
 **Dirección:** `https://mcp.atlassian.com/v1/mcp/authv2`
 
+## Destino de esta ejecución demo
+
+Una vez autenticado el MCP, todas las operaciones de este repositorio deben usar:
+
+* **Sitio Jira:** `https://jlb984.atlassian.net/`
+* **Project Key:** `BJHB`
+
+La autenticación da acceso a todos los proyectos permitidos para la cuenta; por eso, antes
+de escribir, se debe comprobar explícitamente que el ticket pertenece a `BJHB`. La fuente
+local es `.context/project-connections.md`.
+
 ## 🛠️ Requisitos Previos
 
 1.  **Cuenta de Atlassian** con acceso a un sitio de Jira o Confluence **en la nube**.
@@ -63,7 +74,7 @@ Hace exactamente lo mismo —incluida la autenticación por navegador—, solo q
 ## 🧪 Verificación
 
 Pídele a tu IA:
-> "Busca en Jira el ticket con clave PROJ-1 y dime su estado."
+> "Busca en Jira el ticket con clave BJHB-2 y dime su estado."
 
 Si responde con el título y estado del ticket, ¡la conexión es exitosa!
 

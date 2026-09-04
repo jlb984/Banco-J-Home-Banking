@@ -1,4 +1,4 @@
-# Banco X Sistema Home Banking QA
+# Banco J Home Banking QA
 
 > **Transforma tu perfil de QA tradicional a QA Augmented dominando LLMs, Context Engineering y Protocolos MCP.**
 
@@ -13,9 +13,23 @@ colaboradores de **Ecosistemas** durante agosto y septiembre de 2026.
 
 El repositorio es público para que los alumnos puedan consultarlo, clonarlo o crear un fork.
 Clonar el proyecto no concede permisos de escritura sobre
-`jlb984/Banco-J-Home-Banking`: los cambios solo pueden subirse a un repositorio propio o
+[`jlb984/Banco-J-Home-Banking`](https://github.com/jlb984/Banco-J-Home-Banking): los cambios solo pueden subirse a un repositorio propio o
 proponerse mediante un Pull Request. Únicamente el propietario puede modificar las ramas del
 repositorio original o aceptar esos cambios.
+
+## Conexiones oficiales
+
+| Servicio | Destino de esta ejecución |
+| :--- | :--- |
+| Jira | [`https://jlb984.atlassian.net/`](https://jlb984.atlassian.net/) |
+| Proyecto Jira | `BJHB` |
+| GitHub | [`https://github.com/jlb984/Banco-J-Home-Banking`](https://github.com/jlb984/Banco-J-Home-Banking) |
+
+Estas conexiones son exclusivas de este proyecto. El material que se había mezclado con
+otro proyecto fue deduplicado y migrado a claves reales de `BJHB`; las claves anteriores
+solo se conservan en el registro de migración y no deben usarse como destino. La regla
+completa está en
+[`.context/project-connections.md`](.context/project-connections.md).
 
 ---
 
@@ -67,8 +81,8 @@ Si prefieres clonarlo manualmente, recuerda cambiar el origen para no intentar s
 
 ```bash
 # 1. Clona este repo
-git clone https://github.com/Ecosistemas-QA/curso-QA-AI-Augmented.git
-cd curso-QA-AI-Augmented
+git clone https://github.com/jlb984/Banco-J-Home-Banking.git
+cd Banco-J-Home-Banking
 
 # 2. Elimina el vínculo con el origen
 git remote remove origin

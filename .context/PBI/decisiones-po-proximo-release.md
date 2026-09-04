@@ -12,7 +12,7 @@
 
 ## 1. Propósito y autoridad
 
-Este documento responde las preguntas abiertas detectadas durante el refinamiento y la inspección Shift-Left. Sus decisiones son la fuente funcional vigente para reprocesar las Epics y Stories de `CAQ`.
+Este documento responde las preguntas abiertas detectadas durante el refinamiento y la inspección Shift-Left. Sus decisiones son la fuente funcional vigente para reprocesar las Epics y Stories que se incorporen al proyecto Jira `BJHB`.
 
 Cuando una decisión contradiga una especificación histórica, prevalece este documento por ser posterior. El comportamiento observado continúa siendo evidencia de la implementación, no una regla de negocio. Una diferencia entre este documento y la aplicación debe tratarse como defecto o trabajo pendiente.
 
@@ -26,7 +26,10 @@ El release 1.1 será de estabilización y completitud del alcance existente. Inc
 
 Quedan fuera de alcance pagos, sincronización con calendarios, múltiples profesionales por organización, múltiples servicios, precios, formularios personalizados, aplicaciones nativas y una contratación real del Plan Pro.
 
-El backlog funcional vigente es el proyecto Jira `CAQ`. El proyecto `BJHB` no es fuente de verdad para Cita AI y no debe recibir sincronizaciones de estas Stories.
+El proyecto Jira canónico de esta ejecución es `BJHB`, en
+`https://jlb984.atlassian.net/`. Todas las referencias de este documento usan las claves
+reales obtenidas al deduplicar y migrar el backlog el 03/09/2026. El detalle de equivalencias
+se conserva en `.context/PBI/migracion-caq-a-bjhb.md`.
 
 ### 2.2 Zona horaria y fechas
 
@@ -65,7 +68,7 @@ Queda fuera del release 1.1. El nombre y correo ingresados deben pertenecer a la
 
 ## 3. Cuenta y activación del profesional
 
-### CAQ-3 — Registro del profesional
+### BJHB-2 — Registro del profesional
 
 * El nombre se recorta al inicio y al final, conserva acentos y espacios internos, y debe contener entre 1 y 100 caracteres Unicode.
 * El correo se recorta, se guarda en minúsculas y se compara sin distinguir mayúsculas. Su máximo es 254 caracteres.
@@ -81,7 +84,7 @@ Queda fuera del release 1.1. El nombre y correo ingresados deben pertenecer a la
 * Si se creó el usuario de Auth pero falló perfil, slug o configuración inicial, la cuenta queda en onboarding incompleto. El siguiente ingreso reintenta idempotentemente los pasos faltantes y nunca crea otra cuenta.
 * Una falla del correo de bienvenida no revierte el alta. Se registra el fallo y se reintenta según la política de correos de la sección 7.
 
-### CAQ-4 — Inicio y cierre de sesión
+### BJHB-11 — Inicio y cierre de sesión
 
 * El logout invalida la sesión actual, limpia de memoria y caché todos los datos privados y redirige inmediatamente a `/login`.
 * La invalidación se propaga a todas las pestañas del mismo navegador. Las sesiones de otros dispositivos permanecen activas; cerrar todas las sesiones será una acción separada futura.
@@ -90,9 +93,9 @@ Queda fuera del release 1.1. El nombre y correo ingresados deben pertenecer a la
 * Después de 5 intentos fallidos dentro de 15 minutos, se bloquean nuevos intentos durante 15 minutos por combinación de cuenta e IP. La respuesta continúa siendo genérica para no revelar cuentas existentes.
 * El renderizado observado después del logout se considera defecto hasta demostrar que no existe exposición. Desarrollo debe investigar routing, caché, renderizado y autorización de API; la causa no puede decidirse desde Producto.
 
-### CAQ-5 — Recuperación de contraseña
+### BJHB-12 — Recuperación de contraseña
 
-* La nueva contraseña usa exactamente la política de CAQ-3 y no puede ser igual a la contraseña anterior.
+* La nueva contraseña usa exactamente la política de BJHB-2 y no puede ser igual a la contraseña anterior.
 * Una nueva solicitud invalida todos los enlaces de recuperación anteriores de esa cuenta.
 * Se permiten hasta 5 solicitudes por correo y por IP en una hora. Al alcanzar el límite se conserva la respuesta no enumerativa y no se envía otro correo.
 * Mensajes aprobados:
@@ -101,7 +104,7 @@ Queda fuera del release 1.1. El nombre y correo ingresados deben pertenecer a la
   * Token inválido, vencido o usado: `Este enlace ya no es válido. Solicita uno nuevo.`
 * Después del cambio exitoso se invalidan las sesiones existentes y se redirige al login. No se inicia sesión automáticamente.
 
-### CAQ-6 — Acceso a la URL pública
+### BJHB-13 — Acceso a la URL pública
 
 * El dashboard muestra una tarjeta permanente denominada `Mi enlace de reservas`, con la URL completa y acciones `Copiar enlace` y `Abrir página`.
 * Después de copiar se muestra `Enlace copiado` mediante un mensaje accesible.
@@ -112,7 +115,7 @@ Queda fuera del release 1.1. El nombre y correo ingresados deben pertenecer a la
 
 ## 4. Agenda, disponibilidad y gestión de turnos
 
-### CAQ-11 — Configuración de disponibilidad semanal
+### BJHB-15 — Configuración de disponibilidad semanal
 
 * Los bloques se interpretan en la zona horaria del profesional.
 * Se permiten bloques contiguos; no se consideran solapados.
@@ -123,14 +126,14 @@ Queda fuera del release 1.1. El nombre y correo ingresados deben pertenecer a la
   * Cruce de medianoche: `Divide el horario en dos bloques, uno para cada día.`
 * El guardado es atómico: reemplaza toda la configuración o conserva íntegramente la anterior y muestra `No pudimos guardar tu disponibilidad. Intenta nuevamente.`
 
-### CAQ-12 — Duración estándar
+### BJHB-14 — Duración estándar
 
 * Los únicos valores válidos son 15, 30, 45, 60, 90 y 120 minutos. El valor inicial es 60 minutos.
 * Un cambio afecta únicamente la generación de slots futuros. Nunca modifica la duración ni la hora de turnos ya creados.
 * Si un bloque deja un remanente menor que la duración, el remanente se descarta y no genera un slot incompleto.
 * La interfaz observada se adopta como regla del próximo release y reemplaza la regla histórica de cualquier entero positivo.
 
-### CAQ-13 — Bloqueo de períodos
+### BJHB-16 — Bloqueo de períodos
 
 * El bloqueo se guarda y muestra en la zona del profesional; la API usa UTC.
 * No se permite crear un bloqueo cuyo fin sea pasado ni cuyo fin sea igual o anterior al inicio.
@@ -139,16 +142,16 @@ Queda fuera del release 1.1. El nombre y correo ingresados deben pertenecer a la
 * Los turnos ya confirmados permanecen confirmados. Antes de guardar se muestra cuántos quedan dentro del bloqueo y se advierte que deben cancelarse manualmente si corresponde.
 * El bloqueo impide únicamente nuevas reservas. Eliminarlo recalcula los slots que no estén ocupados por turnos.
 
-### CAQ-14 — Registro manual de turno
+### BJHB-17 — Registro manual de turno
 
-* Se puede seleccionar un cliente existente o crear uno con nombre y correo bajo las reglas de CAQ-3.
+* Se puede seleccionar un cliente existente o crear uno con nombre y correo bajo las reglas de BJHB-2.
 * Se requieren cliente, fecha y hora futura. Se admite una nota opcional de hasta 250 caracteres.
 * El profesional puede crear un turno fuera de su disponibilidad semanal como excepción manual.
 * No puede crear un turno dentro de un bloqueo ni superpuesto con otro `confirmed`; primero debe eliminar el bloqueo o elegir otro horario.
 * Si el correo ya pertenece a un cliente del profesional, se reutiliza el registro y no se cambia su nombre silenciosamente.
 * La interfaz deshabilita el envío mientras procesa y el servidor usa una clave de idempotencia. Repetir la misma operación devuelve el turno ya creado.
 
-### CAQ-15 — Consulta de próximos turnos
+### BJHB-18 — Consulta de próximos turnos
 
 * Requiere sesión y autorización de servidor. Solo devuelve turnos del profesional autenticado.
 * Cada fila muestra nombre y correo del cliente, fecha, hora y zona, estado y acciones disponibles.
@@ -159,29 +162,29 @@ Queda fuera del release 1.1. El nombre y correo ingresados deben pertenecer a la
 
 ## 5. Página pública y auto-reserva
 
-### CAQ-16 — Consulta de horarios disponibles
+### BJHB-19 — Consulta de horarios disponibles
 
 * Fechas y horarios se presentan en la zona del profesional con una etiqueta visible.
 * Solo se muestran slots que respeten la ventana de 2 horas a 90 días.
 * Una semana sin slots muestra `No hay horarios disponibles esta semana. Prueba con otra fecha.`
 * Un fallo al consultar muestra `No pudimos cargar los horarios. Intenta nuevamente.` y una acción de reintento.
 
-### CAQ-17 — Página pública del profesional
+### BJHB-20 — Página pública del profesional
 
 * Los únicos datos públicos son nombre visible, zona horaria, duración estándar y slots disponibles.
 * Correo del profesional, identificadores internos, configuración privada y datos de otros clientes nunca son públicos.
 * Un slug inexistente responde HTTP 404 y muestra `No encontramos este perfil.`
 * Un perfil válido sin disponibilidad mantiene la identidad del profesional y muestra `No hay horarios disponibles por el momento.`
 
-### CAQ-18 — Confirmación sin cuenta
+### BJHB-21 — Confirmación sin cuenta
 
-* Nombre y correo usan las mismas reglas de normalización y máximos de CAQ-3. No se solicita contraseña.
+* Nombre y correo usan las mismas reglas de normalización y máximos de BJHB-2. No se solicita contraseña.
 * La confirmación visible muestra `Tu turno fue reservado`, profesional, fecha, hora, zona y aviso de que el enlace de cancelación llegará por correo.
 * El cliente no necesita aprobación posterior del profesional.
 * La UI genera una clave de idempotencia por intento. Repetir durante 10 minutos la misma solicitud con esa clave devuelve el turno existente y no genera otro.
 * Reservar para otra persona queda fuera de alcance según la sección 2.5.
 
-### CAQ-19 — Conflicto concurrente
+### BJHB-22 — Conflicto concurrente
 
 * La base debe garantizar como máximo un turno `confirmed` por profesional e instante. La garantía cubre reserva pública, alta manual y reintentos.
 * Mensaje aprobado: `Este horario acaba de ser reservado por otra persona. Elige otro horario para continuar.`
@@ -191,7 +194,7 @@ Queda fuera del release 1.1. El nombre y correo ingresados deben pertenecer a la
 
 ## 6. Cancelaciones
 
-### CAQ-20 — Cancelación por el cliente
+### BJHB-23 — Cancelación por el cliente
 
 * El enlace contiene un token aleatorio de al menos 256 bits; en la base se conserva solamente su hash.
 * El token es válido desde la confirmación hasta el límite de cancelación de 2 horas antes del turno.
@@ -201,7 +204,7 @@ Queda fuera del release 1.1. El nombre y correo ingresados deben pertenecer a la
 * Turno pasado o dentro de la ventana restringida: `Ya no puedes cancelar este turno desde el enlace. Contacta al profesional.`
 * Una cancelación válida persiste `cancelled` y libera el slot en una única operación antes de informar éxito.
 
-### CAQ-21 — Cancelación por el profesional
+### BJHB-24 — Cancelación por el profesional
 
 * Aplica la ventana general de 2 horas.
 * El motivo es opcional y admite hasta 250 caracteres. No se exigirá hasta que una necesidad posterior lo justifique.
@@ -221,21 +224,21 @@ Queda fuera del release 1.1. El nombre y correo ingresados deben pertenecer a la
 * Agotados los reintentos, el evento queda `failed`, se registra en monitoreo y se alerta al equipo. No se revierte una cuenta, reserva o cancelación ya persistida.
 * La interfaz informa éxito de la operación principal y, cuando el usuario autenticado sea el actor, advierte `La operación se completó, pero no pudimos enviar el correo.`
 
-### CAQ-22 — Aviso de cancelación
+### BJHB-25 — Aviso de cancelación
 
 * Si cancela el cliente se notifica solo al profesional; si cancela el profesional se notifica solo al cliente.
 * El aviso incluye quién canceló, nombre del profesional, fecha, hora, zona horaria y estado `Cancelado`.
 * El correo se genera únicamente después de persistir la cancelación.
 * Una falla de entrega no revierte la cancelación y usa la política común de reintentos.
 
-### CAQ-23 — Confirmación de reserva
+### BJHB-27 — Confirmación de reserva
 
 * El cliente recibe nombre del profesional, fecha, hora, zona, estado y enlace de cancelación.
 * El profesional recibe nombre y correo del cliente, fecha, hora, zona y origen `Reserva pública`.
 * El turno se confirma antes de generar los correos. Una falla de entrega no revierte la reserva.
 * Ambos envíos aplican la política común de reintentos y deduplicación.
 
-### CAQ-24 — Recordatorio
+### BJHB-26 — Recordatorio
 
 * El recordatorio se incorpora al release 1.1.
 * Se envía al cliente exactamente 24 horas antes del turno `confirmed`. El scheduler opera en UTC y el contenido usa la zona del profesional.
@@ -246,22 +249,22 @@ Queda fuera del release 1.1. El nombre y correo ingresados deben pertenecer a la
 
 ## 8. Clientes y límite freemium
 
-### CAQ-25 — Listado de clientes
+### BJHB-7 — Listado de clientes
 
 * El correo se normaliza con trim y minúsculas para determinar unicidad dentro de cada profesional.
 * El listado se ordena alfabéticamente por nombre y, ante empate, por correo.
 * Pagina de a 20 y permite búsqueda parcial por nombre o correo.
-* El historial de turnos queda fuera de CAQ-25 y requiere una Story separada.
+* El historial de turnos queda fuera de BJHB-7 y requiere una Story separada.
 * Solo se muestran clientes asociados con el profesional autenticado.
 
-### CAQ-26 — Carga manual de cliente
+### BJHB-9 — Carga manual de cliente
 
-* `Nuevo Cliente` debe abrir un formulario con nombre y correo bajo las reglas de CAQ-3. La falta de respuesta observada se considera defecto.
+* `Nuevo Cliente` debe abrir un formulario con nombre y correo bajo las reglas de BJHB-2. La falta de respuesta observada se considera defecto.
 * Si el correo ya existe para el profesional, no se crea ni actualiza otro registro. Se muestra `Este cliente ya existe en tu listado.` y se ofrece abrirlo.
 * Al alcanzar el límite se muestra `Alcanzaste el límite de 10 clientes del plan gratuito. Tus clientes actuales pueden seguir reservando.`
 * Un alta válida aparece inmediatamente en el listado respetando su orden.
 
-### CAQ-27 — Límite de diez clientes únicos
+### BJHB-8 — Límite de diez clientes únicos
 
 * El conteo usa el correo normalizado por profesional.
 * Un cliente comienza a contar cuando se crea manualmente o cuando obtiene su primer turno `confirmed`.
@@ -270,7 +273,7 @@ Queda fuera del release 1.1. El nombre y correo ingresados deben pertenecer a la
 * Mensaje público para el cliente número once: `Este profesional alcanzó el límite de nuevos clientes. Contacta directamente al profesional para coordinar tu turno.`
 * El bloqueo se aplica de forma consistente a reserva pública y alta manual.
 
-### CAQ-28 — Información sobre Plan Pro
+### BJHB-10 — Información sobre Plan Pro
 
 * Plan Pro no tendrá precio, beneficios, cobro ni contratación en el release 1.1. La acción solo registra interés.
 * Al alcanzar diez clientes se envía una sola vez el correo: `¡Tu agenda está creciendo! Alcanzaste los 10 clientes de tu plan gratuito. Tus clientes actuales pueden seguir reservando. Si quieres conocer futuras opciones, registra tu interés en el Plan Pro.`
@@ -309,8 +312,8 @@ Queda fuera del release 1.1. El nombre y correo ingresados deben pertenecer a la
 
 Antes de declarar las Stories listas para implementación deben crearse o enlazarse los siguientes trabajos:
 
-1. Bug por cancelación con falso éxito y slot no liberado de CAQ-21.
-2. Investigación de autorización y caché posterior al logout de CAQ-4.
+1. Bug por cancelación con falso éxito y slot no liberado de BJHB-24.
+2. Investigación de autorización y caché posterior al logout de BJHB-11.
 3. Story para configuración de zona horaria del profesional.
 4. Story para estado `no_show`.
 5. Story para historial de turnos y clientes, fuera del listado actual.

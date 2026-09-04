@@ -1,6 +1,6 @@
 # Plan de Pruebas: Página pública y auto-reserva
 
-**Epic:** CAQ-8
+**Epic:** BJHB-4
 **Fecha:** 03/09/2026
 
 ## 1. Matriz de Riesgos del Producto
@@ -36,7 +36,7 @@
 
 | Dato / afirmación | De dónde sale |
 | :--- | :--- |
-| Carrera y flujo público | `.context/PBI/epics/EPIC-CAQ-8-pagina-publica-y-auto-reserva/epic.md` y sus Stories |
+| Carrera y flujo público | `.context/PBI/epics/EPIC-BJHB-4-pagina-publica-y-auto-reserva/epic.md` y sus Stories |
 | Producción única | `.context/infrastructure/environments.md` · Mapa de Entornos |
 | Sin datos mutantes | `.context/infrastructure/test-data-strategy.md` · Restricción inmediata |
 | Scoring | **Hipótesis** — valoración de riesgo de QA |

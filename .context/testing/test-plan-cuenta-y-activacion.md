@@ -1,6 +1,6 @@
 # Plan de Pruebas: Cuenta y activación del profesional
 
-**Epic:** CAQ-2
+**Epic:** BJHB-1
 **Fecha:** 03/09/2026
 
 ## 1. Matriz de Riesgos del Producto
@@ -36,7 +36,7 @@
 
 | Dato / afirmación | De dónde sale |
 | :--- | :--- |
-| Riesgos funcionales | `.context/PBI/epics/EPIC-CAQ-2-cuenta-y-activacion-del-profesional/epic.md` y sus Stories |
+| Riesgos funcionales | `.context/PBI/epics/EPIC-BJHB-1-cuenta-y-activacion-del-profesional/epic.md` y sus Stories |
 | Entorno único | `.context/infrastructure/environments.md` · Mapa de Entornos |
 | Datos mutantes no disponibles | `.context/infrastructure/test-data-strategy.md` · Fuentes de Datos |
 | Probabilidad, impacto y nivel | **Hipótesis** — valoración de riesgo de QA |

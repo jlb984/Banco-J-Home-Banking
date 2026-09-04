@@ -3,16 +3,19 @@
 **Origen:** `.context/architecture/prd.md`
 **Fuentes del backlog:** documentación local y respaldo histórico de Confluence
 **Decisiones vigentes para el próximo release:** `.context/PBI/decisiones-po-proximo-release.md`
+**Jira canónico:** `https://jlb984.atlassian.net/` · Project Key `BJHB`
+**GitHub canónico:** `https://github.com/jlb984/Banco-J-Home-Banking`
+**Migración:** completada y documentada en `.context/PBI/migracion-caq-a-bjhb.md`
 **Tipo de proyecto:** Brownfield
 **Fecha:** 03/09/2026
 
 | Epic | Stories | Refinadas | Inspeccionadas | Sin verificar | Estado de sincronización |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| CAQ-2 [Epic] Cuenta y activación del profesional | 4 | 4 | 4 | 4 | Sincronizado |
-| CAQ-7 [Epic] Agenda, disponibilidad y gestión de turnos | 5 | 5 | 5 | 5 | Sincronizado |
-| CAQ-8 [Epic] Página pública y auto-reserva | 4 | 4 | 4 | 4 | Sincronizado |
-| CAQ-9 [Epic] Cancelaciones y comunicaciones transaccionales | 5 | 5 | 5 | 4 | Sincronizado |
-| CAQ-10 [Epic] Clientes y límite freemium | 4 | 4 | 4 | 4 | Sincronizado |
+| BJHB-1 [Epic] Cuenta y activación del profesional | 4 | 4 | 4 | 4 | Sincronizado con BJHB |
+| BJHB-3 [Epic] Agenda, disponibilidad y gestión de turnos | 5 | 5 | 5 | 5 | Sincronizado con BJHB |
+| BJHB-4 [Epic] Página pública y auto-reserva | 4 | 4 | 4 | 4 | Sincronizado con BJHB |
+| BJHB-5 [Epic] Cancelaciones y comunicaciones transaccionales | 5 | 5 | 5 | 4 | Sincronizado con BJHB |
+| BJHB-6 [Epic] Clientes y límite freemium | 4 | 4 | 4 | 4 | Sincronizado con BJHB |
 
 ## Epics identificadas, pendientes de desglosar
 
@@ -20,24 +23,29 @@
 
 ## Pendiente de subir a Jira
 
-* Ninguna: todo sincronizado.
+* Ninguna: las cinco Epics y sus 22 Stories están sincronizadas con `BJHB`.
 
 ## Estado del refinamiento
 
 * Las 22 Stories están refinadas con análisis INVEST, criterios de aceptación en Gherkin, notas de QA, fuentes, contradicciones y preguntas abiertas.
-* El 03/09/2026 se sincronizaron mediante el MCP de Atlassian las descripciones refinadas de las 22 Stories, desde CAQ-3 hasta CAQ-28.
+* El 03/09/2026 se comparó el material heredado con el backlog existente de `BJHB`: se
+  reutilizaron dos Epics y una Story equivalentes, y se crearon únicamente los elementos
+  faltantes. Las 22 Stories quedaron con sus claves reales y descripciones refinadas.
 
 ## Estado de Shift-Left Testing
 
 * Las 22 Stories fueron inspeccionadas contra el PRD, sus fuentes y, cuando correspondía, el comportamiento observado.
 * Se registraron 69 defectos de requisitos: 8 Stories quedaron con valoración `Bloqueante` y 14 con `Requiere Cambios`.
 * Se generaron cinco planes de prueba basados en riesgos, uno por Epic. La ejecución mutante queda bloqueada porque el único entorno confirmado es Producción y no existen seed ni reset seguros.
-* Las 22 descripciones corregidas y sus comentarios de actividad Shift-Left fueron sincronizados con Jira el 03/09/2026.
+* Las 22 descripciones corregidas fueron sincronizadas con `BJHB` el 03/09/2026. Cada Story
+  recibió además su reporte de inspección Shift-Left y su decisión específica del PO como
+  comentarios de Jira; los reportes locales conservan la trazabilidad de los 69 hallazgos.
 
 ## Pendiente de verificar contra la aplicación
 
-* CAQ-3 a CAQ-6, CAQ-11 a CAQ-20 y CAQ-22 a CAQ-28 permanecen `Sin verificar` por tratarse de un proyecto Brownfield y existir únicamente un entorno de producción con datos reales.
-* CAQ-21 fue verificada parcialmente en producción con un turno sintético: la UI inicia la cancelación, pero el cambio no persiste ni libera el horario.
+* Todas las Stories excepto BJHB-24 permanecen `Sin verificar` por tratarse de un proyecto
+  Brownfield y existir únicamente un entorno de producción con datos reales.
+* BJHB-24 fue verificada parcialmente en producción con un turno sintético: la UI inicia la cancelación, pero el cambio no persiste ni libera el horario.
 
 ## Contradicciones detectadas
 
@@ -50,8 +58,11 @@
 * La especificación presenta el recordatorio del día anterior como requisito; el hilo del 03/03/2026 y la reunión del 19/05/2026 confirman que fue excluido del lanzamiento y sigue sin implementarse. Se conserva como brecha priorizada.
 * La especificación exige impedir superposiciones, pero las notas técnicas documentan una validación no transaccional y soporte registró duplicados. El comportamiento esperado se conserva y la implementación queda sin verificar.
 * El resumen automático atribuye ambos casos de turnos duplicados a husos horarios; la transcripción confirma esa causa solo para uno. Se toma la transcripción como fuente original.
-* La especificación funcional exige que cancelar cambie el turno a `cancelled` y libere el horario; en CAQ-21 la UI retiró temporalmente el turno, pero una navegación nueva lo mostró otra vez, el endpoint autenticado lo mantuvo `confirmed` y la disponibilidad pública no liberó el slot.
-* La configuración local del repositorio identifica `BJHB` como Project Key, pero el backlog vigente y sus 22 Stories existen en Jira bajo las claves `CAQ-2` a `CAQ-28`. El proyecto `BJHB` contiene un backlog diferente e incompleto. Para evitar sobrescribir tickets ajenos a este espejo, la sincronización de esta fase se realizó sobre `CAQ`.
+* La especificación funcional exige que cancelar cambie el turno a `cancelled` y libere el horario; en BJHB-24 la UI retiró temporalmente el turno, pero una navegación nueva lo mostró otra vez, el endpoint autenticado lo mantuvo `confirmed` y la disponibilidad pública no liberó el slot.
+* Se mezcló material de dos proyectos en una ejecución anterior. El 03/09/2026 se comparó
+  contra `BJHB`, se evitaron duplicados y se migró el contenido a claves reales. El detalle
+  queda en `.context/PBI/migracion-caq-a-bjhb.md`; el otro proyecto no debe volver a usarse
+  como destino Jira de este repositorio.
 
 ## Preguntas abiertas
 

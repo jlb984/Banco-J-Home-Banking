@@ -1,6 +1,6 @@
 # Plan de Pruebas: Agenda, disponibilidad y gestión de turnos
 
-**Epic:** CAQ-7
+**Epic:** BJHB-3
 **Fecha:** 03/09/2026
 
 ## 1. Matriz de Riesgos del Producto
@@ -36,7 +36,7 @@
 
 | Dato / afirmación | De dónde sale |
 | :--- | :--- |
-| Riesgos de agenda | `.context/PBI/epics/EPIC-CAQ-7-agenda-disponibilidad-y-gestion-de-turnos/epic.md` y sus Stories |
+| Riesgos de agenda | `.context/PBI/epics/EPIC-BJHB-3-agenda-disponibilidad-y-gestion-de-turnos/epic.md` y sus Stories |
 | Restricción productiva | `.context/infrastructure/environments.md` · Riesgos |
 | Fixtures faltantes | `.context/infrastructure/test-data-strategy.md` · Generación de Datos Sintéticos |
 | Scoring | **Hipótesis** — valoración de riesgo de QA |

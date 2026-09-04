@@ -1,5 +1,10 @@
 # Fase 7: Documentación de Casos de Prueba (CPs)
 
+> **Conexiones de esta ejecución:** Jira
+> `https://jlb984.atlassian.net/`, Project Key `BJHB`; GitHub
+> `https://github.com/jlb984/Banco-J-Home-Banking`. Los Tests de Jira/Xray deben crearse y
+> vincularse únicamente en `BJHB`.
+
 ## 🎯 Objetivo de la Fase
 Transformar el conocimiento adquirido durante las pruebas exploratorias en activos documentales formales. Aquí creamos la "memoria a largo plazo" del proyecto para futuras regresiones y automatización.
 

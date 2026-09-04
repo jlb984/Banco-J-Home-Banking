@@ -1,6 +1,6 @@
 # Plan de Pruebas: Clientes y límite freemium
 
-**Epic:** CAQ-10
+**Epic:** BJHB-6
 **Fecha:** 03/09/2026
 
 ## 1. Matriz de Riesgos del Producto
@@ -36,7 +36,7 @@
 
 | Dato / afirmación | De dónde sale |
 | :--- | :--- |
-| Límite y CTA | `.context/PBI/epics/EPIC-CAQ-10-clientes-y-limite-freemium/epic.md` y sus Stories |
+| Límite y CTA | `.context/PBI/epics/EPIC-BJHB-6-clientes-y-limite-freemium/epic.md` y sus Stories |
 | Riesgo PII | `.context/infrastructure/test-data-strategy.md` · Privacidad y Seguridad |
 | Entorno único | `.context/infrastructure/environments.md` · Mapa de Entornos |
 | Scoring | **Hipótesis** — valoración de riesgo de QA |
